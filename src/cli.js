@@ -8,7 +8,7 @@ var minimist    = require('minimist')
   , isArrayLike = require('./utils/isArrayLike')
   , readFile    = require('./utils/readFile')
   , readJSON    = require('./utils/readJSON')
-  , lovie       = require('./lovie')
+  , luvi        = require('./luvi')
   , pkg         = readJSON(__dirname, '..', 'package.json')
   , argv        = minimist(process.argv.slice(2))
   , log         = console.log
@@ -32,5 +32,5 @@ if (argv._.length) {
 }
 
 each(servers, function(server){
-  lovie(mix(server, argv))
+  luvi(mix(server, argv))
 })

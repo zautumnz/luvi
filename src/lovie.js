@@ -22,7 +22,7 @@ var defaults = {
   }
 }
 
-var lovie = function(options){
+var luvi = function(options){
   var config = mix(defaults, options)
     , app = connect()
 
@@ -53,4 +53,4 @@ var lovie = function(options){
   })
 }
 
-module.exports = lovie
+module.exports = luvi
