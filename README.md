@@ -2,6 +2,7 @@
 ### Front end development server
 --------
 
+
 Launch the server from the document root of your project (where the `index.html` is placed).
 
     $ cd /path/to/prj
@@ -171,4 +172,8 @@ Multiple mappings can be defined here. **(Defatults to)** `undefined`.
 #### config.onListen
 `onListen: function (serverName, port) {console.log(serverName, 'listening on port', port)}`
 **(function (serverName, port))** Called once the server starts listening. **(Defaults to)** `console.log` _(like in the sample above)_.
+
+--------
+
+Luvi is based on/forked from [Freddie](https://github.com/Scytl/freddie), though gradually being massively changed. I like a lot of how Freddie works, but I dislike a lot of it too, so.... Fortunately Freddie's MIT! This is totally WTFPL, I suppose.
 
