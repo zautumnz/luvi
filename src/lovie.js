@@ -15,7 +15,7 @@ var logger = function(serverName, middlewareName){
 
 var defaults = {
     root: process.cwd()
-  , port: 3000
+  , port: 4444
   , name: 'server'
   , onListen: function(serverName, port){
       console.log(serverName, 'listening on port', port)
