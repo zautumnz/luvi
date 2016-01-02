@@ -9,21 +9,6 @@ var proxyMiddleware = function(target, options){
   var context = options.context || '',
     log = options.log || console.log
 
-  /**
-   * Allow target definitions with a path part
-   * -----------------------------------------
-   *
-   * Having a target with a path part `host:1234/path/part`
-   * and a context `/context`
-   *
-   *     { '/context': 'host:1234/path/part' }
-   *
-   * The `/path/part` must be removed from the target and added to the
-   * context as a prefix:
-   *
-   *     target: 'host:1234'
-   *     context: '/path/part/context'
-   */
   var urlFormatted, isSecured = false
   if (typeof target === 'object') {
     urlFormatted = url.parse(target.url)
@@ -37,30 +22,10 @@ var proxyMiddleware = function(target, options){
     host: urlFormatted.host
   })
 
-  /**
-   * Avoid '//' in the context of any requests
-   * -----------------------------------------
-   *
-   * `url.parse` returns `/` as path when no path is defined
-   * and the context defined in config must start with `/`
-   *
-   * To avoid `//context` by concatenating path and context,
-   * `/` is removed from path when no path is defined
-   */
-
   var path = urlFormatted.pathname === '/' ? '' : urlFormatted.pathname,
     proxyContext = path + context
 
-  /**
-   * Proxy to HTTPS without using certs
-   * ----------------------------------
-   *
-   * Use `secure: false` in the proxy configuration to access HTTPS targets
-   * without cert
-   *
-   * Rewrite request Host header by using the proxy target
-   * -----------------------------------------------------
-   *
+  /* Use `secure: false` in the proxy configuration to access HTTPS targets
    * Use `headers: { host: <new host> }` in proxy configuration to rewrite the
    * Host header with the current proxy target
    */
@@ -97,7 +62,6 @@ var proxyMiddleware = function(target, options){
       , msg = request + ' -> ' + proxyTarget + req.url
     log(msg)
 
-    /* replace Set-Cookie's Path attribute */
     var headers = proxyRes.headers
     if (!headers['set-cookie']) {return}
 
