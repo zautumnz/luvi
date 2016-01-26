@@ -1,64 +1,65 @@
-# luvi
+# lv
 ### Front end development server
 --------
 
+(Formerly called `luvi`, but it turns out there's a Lua thing by that name. This is shorter, anyway, so I win.)
 
 Launch the server from the document root of your project (where the `index.html` is placed).
 
     $ cd /path/to/prj
-    $ luvi
+    $ lv
 	  server listening on port 3000
 
-By default, **luvi** acts as a static server, serving the files placed in the directory from where it is launched. It has, however, 3 main features built-in, covering the full development cycle:
+By default, **lv** acts as a static server, serving the files placed in the directory from where it is launched. It has, however, 3 main features built-in, covering the full development cycle:
   - **static server** for static demos
   - **fixtures server** for prototyping when the back end is not released yet
   - **proxy server** for redirecting requests to a back end
 
 ### Installation
-    $ npm i -g luvi
+    $ npm i -g lv
 
 ### Usage
-    $ luvi [server, ...] [options]
-**luvi** looks inside the current directory looking for a `.luvi.json` config file. If there is no config file, the default static server is launched.
+    $ lv [server, ...] [options]
+**lv** looks inside the current directory looking for a `.lv.json` config file. If there is no config file, the default static server is launched.
 
 #### [server, ...]
-    $ luvi dev doc
+    $ lv dev doc
     dev listening on port 3000
     doc listening on port 3001
 List of named servers to launch. Only names matching the ones in config file will be launched.
 
 ### [options]
 
-    $ luvi --h
+    $ lv --h
   Shows a shortened version of this README.
 
-    $ luvi -v
-  Displays luvi's version
+    $ lv -v
+  Displays lv's version
 
-    $ luvi -c /path/to/nondefault/config.json
-  Use the specified file as server configuration instead of the default `.luvi.json`
+    $ lv -c /path/to/nondefault/config.json
+  Use the specified file as server configuration instead of the default `.lv.json`
 
-    $ luvi -n
-  Ignore the `.luvi.json` config file in the current directory. Useful when used with the server-related options like `-r`.
+    $ lv -n
+  Ignore the `.lv.json` config file in the current directory. Useful when used with the server-related options like `-r`.
 
 ### [server-related options]
-The following options will be passed through directly to the **luvi** library. For further information see the API documentation below.
-The command-line options get priority over the config file options. In a path with a `.luvi.json` file, running `luvi` with server-related options overrides the ones specified in the config file. If the config file has multiple servers, the command-line options will override every server definition.
+The following options will be passed through directly to the **lv** library. For further information see the API documentation below.
+The command-line options get priority over the config file options. In a path with a `.lv.json` file, running `lv` with server-related options overrides the ones specified in the config file. If the config file has multiple servers, the command-line options will override every server definition.
 
-    $ luvi -r /path/to/document/root
+    $ lv -r /path/to/document/root
   Path where the files you want to serve are stored.
   The root is defined following this priority order:
 1.  CLI parameter
 2.  config's root property
 3.  current directory
 
-    $ luvi -p 1337
+    $ lv -p 1337
   Port to listen for incoming requests.
   To serve on ports below 1024, you will need to launch as root.
 
-### .luvi.json
+### .lv.json
 **Single server configuration**. To configure a single server you can declare server-related options directly as a JSON object: `{"root": "public",  "port": 8080}`.
-The object will be passed through directly to the **luvi** library. For a list of the options that can be used see the API documentation below.
+The object will be passed through directly to the **lv** library. For a list of the options that can be used see the API documentation below.
 _(Note that because functions cannot be used in JSON, some options from
 the API are only accessible through JavaScript.)_
 
@@ -89,17 +90,17 @@ the API are only accessible through JavaScript.)_
 
 ## API
 
-You can pass a config object to the `luvi()` function to define custom settings. Otherwise defaults will be applied. Here is an example using the same config as the default settings.
+You can pass a config object to the `lv()` function to define custom settings. Otherwise defaults will be applied. Here is an example using the same config as the default settings.
 ```javascript
-var luvi = require('luvi')
-luvi({
+var lv = require('lv')
+lv({
     name: 'server'
   , root: process.cwd()
   , port: 3000
 })
 ```
-This is the same as calling `luvi()` with no config object. The defaults are merged with the config passed so you can configure just the name, for instance, and the default port and root will be applied.
-You can launch multiple servers from the same script, each with its own configuration, by calling `luvi()` several times passing the settings you want on each call.
+This is the same as calling `lv()` with no config object. The defaults are merged with the config passed so you can configure just the name, for instance, and the default port and root will be applied.
+You can launch multiple servers from the same script, each with its own configuration, by calling `lv()` several times passing the settings you want on each call.
 There are 3 available middlewares built-in, which handle requests with the following priority:
 
 1.   proxy middleware
@@ -117,7 +118,7 @@ The path can be absolute or relative to the current directory. **(Defaults to)**
 
 #### config.port
 `port: 3000`
-**(Number)** Port to listen for incoming requests. **luvi** looks for a free port to listen. If the specified port is busy, the port number is incremented and tried again until a free port is reached. **(Defaults to)** `3000`.
+**(Number)** Port to listen for incoming requests. **lv** looks for a free port to listen. If the specified port is busy, the port number is incremented and tried again until a free port is reached. **(Defaults to)** `3000`.
 
 #### config.name
 `name: 'foo'`
@@ -175,5 +176,5 @@ Multiple mappings can be defined here. **(Defatults to)** `undefined`.
 
 --------
 
-Luvi is based on/forked from [Freddie](https://github.com/Scytl/freddie), though gradually being massively changed. I like a lot of how Freddie works, but I dislike a lot of it too, so.... Fortunately Freddie's MIT! This is totally WTFPL, I suppose.
+lv is based on/forked from [Freddie](https://github.com/Scytl/freddie), though gradually being massively changed. I like a lot of how Freddie works, but I dislike a lot of it too, so.... Fortunately Freddie's MIT! This is totally WTFPL, I suppose.
 

@@ -1,6 +1,6 @@
-var cookie  = require('cookie')
-, parse     = cookie.parse
-, serialize = cookie.serialize
+var cookie    = require('cookie')
+  , parse     = cookie.parse
+  , serialize = cookie.serialize
 
 var cookieRewrite = function (cookie, fn){
   var tokens = cookie.split(/; */)

@@ -1,7 +1,7 @@
 /* from https://github.com/indexzero/node-portfinder */
 
-var net = require('net')
-, beacon = function(port, fn){
+var net    = require('net')
+  , beacon = function(port, fn){
     var server = net.createServer(function(){})
     var onListen = function(){
       server.removeListener('error', onError)
@@ -11,7 +11,7 @@ var net = require('net')
 
     var onError = function(err){
       server.removeListener('listening', onListen)
-      if (err.code !== 'EADDRINUSE' && err.code !== 'EACCES') {
+      if(err.code !== 'EADDRINUSE' && err.code !== 'EACCES'){
         return fn(err)
       }
       beacon(port + 1, fn)
@@ -21,5 +21,6 @@ var net = require('net')
   server.once('listening', onListen)
   server.listen(port)
 }
+
 module.exports = beacon
 

@@ -5,3 +5,4 @@ var isNumber = function(arg){
 }
 
 module.exports = isNumber
+

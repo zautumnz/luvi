@@ -22,11 +22,11 @@ var defaults = {
   }
 }
 
-var luvi = function(options){
+var lv = function(options){
   var config = mix(defaults, options)
     , app = connect()
 
-  if (config.proxy) {
+  if(config.proxy){
     each(config.proxy, function(target, context){
       app.use(context, proxy(target, {
         context: context
@@ -35,7 +35,7 @@ var luvi = function(options){
     })
   }
 
-  if (config.fixtures) {
+  if(config.fixtures){
     each(config.fixtures, function(root, context){
       app.use(context, fixtures(root, {
         log: logger(config.name, 'fixtures')
@@ -46,12 +46,14 @@ var luvi = function(options){
   app.use(serveStatic(config.root))
 
   beacon(config.port, function(err, port){
-    if (err) {throw err}
+    if(err){
+      throw err
+    }
     http.createServer(app).listen(port, function(){
       config.onListen(config.name, port)
     })
   })
 }
 
-module.exports = luvi
+module.exports = lv
 

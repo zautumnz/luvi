@@ -5,3 +5,4 @@ var isDefined = function(arg){
 }
 
 module.exports = isDefined
+

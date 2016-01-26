@@ -1,7 +1,7 @@
 'use strict'
 
 var each = require('./each')
-  , mix = function(){
+  , mix  = function(){
       var mixed = {}
       each(arguments, function(obj){
       each(obj, function(item, index){
@@ -12,3 +12,4 @@ var each = require('./each')
 }
 
 module.exports = mix
+

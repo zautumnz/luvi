@@ -64,3 +64,4 @@ var fixturesMiddleware = function(root, options){
 }
 
 module.exports = fixturesMiddleware
+
