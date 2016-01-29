@@ -1,7 +1,7 @@
 {
   "name": "lv",
   "version": "0.6.0",
-  "description": "Front end development server",
+  "description": "dev server",
   "homepage": "https://github.com/zacanger/lv.git",
   "author": "zacanger",
   "license": "WTFPL",
