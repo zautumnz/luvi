@@ -8,7 +8,6 @@ var net    = require('net')
       server.close()
       fn(null, port)
     }
-
     var onError = function(err){
       server.removeListener('listening', onListen)
       if(err.code !== 'EADDRINUSE' && err.code !== 'EACCES'){
@@ -16,11 +15,10 @@ var net    = require('net')
       }
       beacon(port + 1, fn)
     }
-
-  server.once('error', onError)
-  server.once('listening', onListen)
-  server.listen(port)
-}
+    server.once('error', onError)
+    server.once('listening', onListen)
+    server.listen(port)
+  }
 
 module.exports = beacon
 

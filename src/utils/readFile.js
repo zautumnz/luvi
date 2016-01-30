@@ -1,13 +1,12 @@
 'use strict'
 
-var fs       = require('fs')
-  , path     = require('path')
+var fs = require('fs')
+  , path = require('path')
   , readFile = function(){
-      var file = path.resolve.apply(null, arguments)
-  try{
+  var file = path.resolve.apply(null, arguments)
+  try {
     return fs.readFileSync(file, {encoding: 'utf8'})
-  }
-  catch (e){
+  } catch(e){
     return
   }
 }

@@ -18,11 +18,11 @@ var minimist    = require('minimist')
   , servers     = isArrayLike(config) ? config : [config]
 
 if(argv.v){argv.version = argv.v}
-if(argv.h){argv.help = argv.h}
-if(argv.c){argv.config = argv.c}
-if(argv.r){argv.root = argv.r}
-if(argv.p){argv.port = argv.p}
-if(argv.n){argv.noconf = argv.n}
+if(argv.h){argv.help    = argv.h}
+if(argv.c){argv.config  = argv.c}
+if(argv.r){argv.root    = argv.r}
+if(argv.p){argv.port    = argv.p}
+if(argv.n){argv.noconf  = argv.n}
 if(argv.version){return log(pkg.version)}
 if(argv.help){return log(readFile(__dirname, 'help.md'))}
 

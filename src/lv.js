@@ -24,7 +24,7 @@ var defaults = {
 
 var lv = function(options){
   var config = mix(defaults, options)
-    , app = connect()
+    , app    = connect()
 
   if(config.proxy){
     each(config.proxy, function(target, context){

@@ -7,14 +7,12 @@ var path          = require('path')
 var readJSON = function(){
   var file    = path.resolve.apply(null, arguments)
     , content = readFile(file)
-
   if(!content){
     return
   }
-  try{
+  try {
     return JSON.parse(stripComments(content))
-  }
-  catch (e){
+  } catch(e){
     return console.error('error parsing JSON: ', file)
   }
 }
