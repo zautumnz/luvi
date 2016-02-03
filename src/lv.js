@@ -1,6 +1,7 @@
 'use strict'
 
 var http        = require('http')
+  , opener      = require('opener')
   , connect     = require('connect')
   , serveStatic = require('serve-static')
   , each        = require('./utils/each')
@@ -19,6 +20,7 @@ var defaults = {
   , name: 'server'
   , onListen: function(serverName, port){
       console.log(serverName, 'listening on port', port)
+      opener('http://localhost:' + port)
   }
 }
 

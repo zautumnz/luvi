@@ -20,6 +20,7 @@
     "dummy-json": "0.0.3",
     "http-proxy": "^1.12.0",
     "minimist": "^1.2.0",
+    "opener": "^1.4.1",
     "serve-static": "^1.10.0",
     "strip-json-comments": "^2.0.0"
   },
@@ -32,4 +33,3 @@
     "https"
   ]
 }
-
