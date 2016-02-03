@@ -1,11 +1,11 @@
-the lv server
+the luvi server
 usage:
-  lv -h                        this halp
-  lv -v                        lv version
-  lv -c /path/to/config.json   use non-default config file
-  lv -n                        ignore `.lv.json` in cwd
-  lv foo bar                   start lv servers `foo` & `bar`
-  lv -r /path/to/www/root      root dir to serve
-  lv -p 1337                   port to listen on for requests
+  luvi -h                        this help
+  luvi -v                        luvi version
+  luvi -c /path/to/config.json   use non-default config file
+  luvi -n                        ignore `.luvi.json` in cwd
+  luvi foo bar                   start luvi servers `foo` & `bar`
+  luvi -r /path/to/www/root      root dir to serve
+  luvi -p 1337                   port to listen on for requests
 see the readme for config options
 

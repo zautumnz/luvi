@@ -2,17 +2,17 @@
   "name": "luvi",
   "version": "0.6.1",
   "description": "dev server",
-  "homepage": "https://github.com/zacanger/lv.git",
+  "homepage": "https://github.com/zacanger/luvi.git",
   "author": "zacanger",
   "license": "WTFPL",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zacanger/lv.git"
+    "url": "https://github.com/zacanger/luvi.git"
   },
-  "main": "src/lv.js",
+  "main": "src/luvi.js",
   "preferGlobal": true,
   "bin": {
-    "lv": "src/cli.js"
+    "luvi": "src/cli.js"
   },
   "dependencies": {
     "connect": "^3.4.0",
