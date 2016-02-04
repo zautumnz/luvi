@@ -4,13 +4,13 @@
 
 --------
 
-Launch the server from the document root of your project (where the `index.html` is placed).
-
-    $ cd /path/to/project
+    $ cd /path/to/your/project
     $ luvi
-	  server listening on port 4444
+    luvi listening on 4444
 
-By default, **luvi** acts as a static server, serving the files placed in the directory from where it is launched. It has, however, 3 main features built-in, covering the full development cycle:
+By default, `luvi` acts as a static server, serving the files in `cwd`.
+
+There are three main additional features:
 
 * **static server** for static demos
 * **fixtures server** for prototyping when the back end is not released yet

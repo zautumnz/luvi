@@ -17,9 +17,9 @@ var logger = function(serverName, middlewareName){
 var defaults = {
     root: process.cwd()
   , port: 4444
-  , name: 'server'
+  , name: 'luvi'
   , onListen: function(serverName, port){
-      console.log(serverName, 'listening on port', port)
+      console.log(serverName, 'listening on', port)
       opener('http://localhost:' + port)
   }
 }
