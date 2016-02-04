@@ -3,12 +3,12 @@
 'use strict'
 
 var minimist    = require('minimist')
-  , each        = require('./utils/each')
-  , filter      = require('./utils/filter')
-  , mix         = require('./utils/mix')
-  , isArrayLike = require('./utils/isArrayLike')
-  , readFile    = require('./utils/readFile')
-  , readJSON    = require('./utils/readJSON')
+  , each        = require('./util/each')
+  , filter      = require('./util/filter')
+  , mix         = require('./util/mix')
+  , isArrayLike = require('./util/isArrayLike')
+  , readFile    = require('./util/readFile')
+  , readJSON    = require('./util/readJSON')
   , luvi        = require('./luvi')
   , pkg         = readJSON(__dirname, '..', 'package.json')
   , argv        = minimist(process.argv.slice(2))

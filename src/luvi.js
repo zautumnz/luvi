@@ -4,11 +4,10 @@ var http        = require('http')
   , opener      = require('opener')
   , connect     = require('connect')
   , serveStatic = require('serve-static')
-  , each        = require('./utils/each')
-  , mix         = require('./utils/mix')
-  , beacon      = require('./utils/beacon')
-  , proxy       = require('./middleware/proxy')
-  , fixtures    = require('./middleware/fixtures')
+  , each        = require('./util/each')
+  , mix         = require('./util/mix')
+  , beacon      = require('./util/beacon')
+  , proxy       = require('./util/proxy')
 
 var logger = function(serverName, middlewareName){
   return console.log.bind(console, serverName, middlewareName + ':')
@@ -33,14 +32,6 @@ var luvi = function(options){
       app.use(context, proxy(target, {
         context: context
       , log: logger(config.name, 'proxy')
-      }))
-    })
-  }
-
-  if(config.fixtures){
-    each(config.fixtures, function(root, context){
-      app.use(context, fixtures(root, {
-        log: logger(config.name, 'fixtures')
       }))
     })
   }

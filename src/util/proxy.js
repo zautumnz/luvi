@@ -1,6 +1,6 @@
 var httpProxy     = require('http-proxy')
   , url           = require('url')
-  , cookieRewrite = require('../utils/cookieRewrite')
+  , cookieRewrite = require('./cookieRewrite')
   , fs            = require('fs')
 
 var proxyMiddleware = function(target, options){
