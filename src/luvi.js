@@ -4,21 +4,21 @@ var http        = require('http')
   , opener      = require('opener')
   , connect     = require('connect')
   , serveStatic = require('serve-static')
-  , each        = require('./util/each')
   , mix         = require('./util/mix')
-  , beacon      = require('./util/beacon')
+  , each        = require('./util/each')
   , proxy       = require('./util/proxy')
+  , beacon      = require('./util/beacon')
 
 var logger = function(serverName, middlewareName){
   return console.log.bind(console, serverName, middlewareName + ':')
 }
 
 var defaults = {
-    root: process.cwd()
-  , port: 4444
-  , name: 'luvi'
-  , onListen: function(serverName, port){
-      console.log(serverName, 'listening on', port)
+    root     : process.cwd()
+  , port     : 4444
+  , name     : 'luvi'
+  , onListen : function(serverName, port){
+      console.log(serverName, 'is listening on', port)
       opener('http://localhost:' + port)
   }
 }
@@ -30,8 +30,8 @@ var luvi = function(options){
   if(config.proxy){
     each(config.proxy, function(target, context){
       app.use(context, proxy(target, {
-        context: context
-      , log: logger(config.name, 'proxy')
+        context : context
+      , log     : logger(config.name, 'proxy')
       }))
     })
   }

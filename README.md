@@ -1,7 +1,5 @@
 # luvi
 
-## Front-end Development Server
-
 --------
 
     $ cd /path/to/your/project
@@ -10,14 +8,16 @@
 
 By default, `luvi` acts as a static server, serving the files in `cwd`. It can also redirect requests to a back-end.
 
-### Installation & Usage
+--------
+
+## Installation & Usage
 
     $ npm i -g luvi
     $ luvi [server, ...] [options]
 
 `luvi` looks inside `cwd` for a `.luvi.json` config file. If there is no config file, the default static server is launched.
 
-##### [server, ...]
+#### [server, ...]
 
     $ luvi foo bar
     foo listening on port 4444
@@ -64,15 +64,17 @@ For multiple servers, simply use an array of single-server configs. Use the `nam
       }
     ]
 
-### API
+--------
+
+## API
 
 You can pass an object to `luvi()` for custom settings; otherwise, these defaults are applied:
 
     var luvi = require('luvi')
     luvi({
-        name: 'luvi'
-      , root: process.cwd()
-      , port: 4444
+        name : 'luvi'
+      , root : process.cwd()
+      , port : 4444
     })
 
 This is exactly the same as just calling `luvi()`, with no config object.

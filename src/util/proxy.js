@@ -1,7 +1,9 @@
-var httpProxy     = require('http-proxy')
+// from https://github.com/Scytl/freddie
+
+var fs            = require('fs')
   , url           = require('url')
+  , httpProxy     = require('http-proxy')
   , cookieRewrite = require('./cookieRewrite')
-  , fs            = require('fs')
 
 var proxyMiddleware = function(target, options){
   options = options || {}
@@ -18,8 +20,8 @@ var proxyMiddleware = function(target, options){
   }
 
   var proxyTarget = url.format({
-    protocol: urlFormatted.protocol,
-    host: urlFormatted.host
+    protocol : urlFormatted.protocol
+  , host     : urlFormatted.host
   })
 
   var path = urlFormatted.pathname === '/' ? '' : urlFormatted.pathname
@@ -29,17 +31,18 @@ var proxyMiddleware = function(target, options){
   // `headers:{host:<newhost>}` to rewrite host header w/ current proxy target
 
   var objConf = {
-      target: proxyTarget
-    , secure: false
-    , headers: {host: urlFormatted.host}
+      target  : proxyTarget
+    , secure  : false
+    , headers : {host: urlFormatted.host}
   }
+
   if(isSecured){a
     objConf.ssl = {
-      key: fs.readFileSync(target.key, 'utf8')
-    , cert: fs.readFileSync(target.cert, 'utf8')
+      key  : fs.readFileSync(target.key, 'utf8')
+    , cert : fs.readFileSync(target.cert, 'utf8')
     }
   // objConf.pfx = fs.readFileSync(target.key, 'utf8')
-  // objConf.passphrase = "nashville"
+  // objConf.passphrase = "asdfghjkl"
   }
 
   console.log(objConf)

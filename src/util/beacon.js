@@ -1,8 +1,8 @@
-/* from https://github.com/indexzero/node-portfinder */
+// from https://github.com/indexzero/node-portfinder
 
 var net    = require('net')
   , beacon = function(port, fn){
-    var server = net.createServer(function(){})
+    var server   = net.createServer(function(){})
     var onListen = function(){
       server.removeListener('error', onError)
       server.close()
