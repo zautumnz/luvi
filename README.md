@@ -6,7 +6,9 @@
     $ luvi
     luvi listening on 4444
 
-By default, `luvi` acts as a static server, serving the files in `cwd`. It can also redirect requests to a back-end.
+By default, `luvi` acts as a static server, serving the files in `cwd`.
+It can also redirect requests to a back-end.
+On launch, `luvi` will open a tab in your default browser pointing to your defined root.
 
 --------
 
@@ -15,7 +17,8 @@ By default, `luvi` acts as a static server, serving the files in `cwd`. It can a
     $ npm i -g luvi
     $ luvi [server, ...] [options]
 
-`luvi` looks inside `cwd` for a `.luvi.json` config file. If there is no config file, the default static server is launched.
+`luvi` looks inside `cwd` for a `.luvi.json` config file.
+If there is no config file, the default static server is launched.
 
 #### [server, ...]
 
@@ -27,7 +30,10 @@ List of named servers to launch. Only names matching the ones in config file wil
 
 ### [options]
 
-Command-line arguments take priority over config files and defaults. In a path with a `.luvi.json` file, running `luvi` will follow the options in the file, unless any options are passed; if there are multiple servers in the `.luvi.json` file, every server's options will be overridden. Project root is `cwd` by default.
+Command-line arguments take priority over config files and defaults.
+In a path with a `.luvi.json` file, running `luvi` will follow the options in the file,
+unless any options are passed; if there are multiple servers in the `.luvi.json` file,
+every server's options will be overridden. Project root is `cwd` by default.
 
     $ luvi -h                            # Shows a shortened version of this README
     $ luvi -v                            # Displays luvi's version
@@ -38,9 +44,11 @@ Command-line arguments take priority over config files and defaults. In a path w
 
 ### .luvi.json
 
-To configure a single server: `{"root":"public","port":9090}`. The object will be passed directly to `luvi`.
+To configure a single server: `{"root":"public","port":9090}`.
+The object will be passed directly to `luvi`.
 
-For multiple servers, simply use an array of single-server configs. Use the `name` option to keep track of servers in logs.
+For multiple servers, simply use an array of single-server configs.
+Use the `name` option to keep track of servers in logs.
 
     [
       {
@@ -79,13 +87,19 @@ You can pass an object to `luvi()` for custom settings; otherwise, these default
 
 This is exactly the same as just calling `luvi()`, with no config object.
 
-These defaults are merged with whatever you pass, so if, for example, you only pass in a custom server name, `luvi` will still run on port 4444 and use `cwd` as the root to serve.
+These defaults are merged with whatever you pass, so if, for example,
+you only pass in a custom server name, `luvi` will still run on port 4444
+and use `cwd` as the root to serve.
 
-Multiple servers can be launched from the same script, with different configs, by calling `luvi()` again with different options.
+Multiple servers can be launched from the same script, with different configs,
+by calling `luvi()` again with different options.
 
-If you define a `proxy` property and a request matches one of the specified contexts, that request will be handled by the proxy middleware.
+If you define a `proxy` property and a request matches one of the specified
+contexts, that request will be handled by the proxy middleware.
 
-If the proxy middleware doesn't handle the request, it'll be passed on to the static middleware. If the static middleware can't handle the request, it will return an HTTP error response.
+If the proxy middleware doesn't handle the request, it'll be passed on to
+the static middleware. If the static middleware can't handle the request,
+it will return an HTTP error response.
 
 #### options
 
