@@ -35,12 +35,14 @@ In a path with a `.luvi.json` file, running `luvi` will follow the options in th
 unless any options are passed; if there are multiple servers in the `.luvi.json` file,
 every server's options will be overridden. Project root is `cwd` by default.
 
-    $ luvi -h                            # Shows a shortened version of this README
-    $ luvi -v                            # Displays luvi's version
-    $ luvi -c /path/to/some/config.json  # Use a non-default config file
-    $ luvi -n                            # Ignore the config file in`cwd`--useful for `-r`
-    $ luvi -r /path/to/your/project      # Serve from a different directory
-    $ luvi -p 1337                       # Serve from specified port--for ports below 1024, run `luvi` as root
+    $ luvi                           # launches the default server
+    $ luvi foo bar                   # starts luvi servers `foo` & `bar`
+    $ luvi -p 1337                   # serves from specified port--must be root to use ports below 1024
+    $ luvi -r /path/to/www/root      # serves from specified directory
+    $ luvi -c /path/to/config.json   # uses a non-default config file
+    $ luvi -n                        # ignores the config file in `cwd`--useful for options like `-r`
+    $ luvi -v                        # display's luvi's version
+    $ luvi -h                        # shows a version of this help dialog
 
 ### .luvi.json
 
@@ -50,27 +52,22 @@ The object will be passed directly to `luvi`.
 For multiple servers, simply use an array of single-server configs.
 Use the `name` option to keep track of servers in logs.
 
-    [
-      {
-        "name": "dev",
-        "root": "main",
-        "port": 1337,
-        "fixtures": {
-          "/api": "test/fixtures"
-        }
-      },{
-        "name": "staging",
-        "root": "pub",
-        "port": 4444,
-        "proxy": {
-          "/api": "http://backend:1207/app"
-        }
-      },{
-        "name": "doc",
-        "root": "doc",
-        "port": 5000
+    [{
+      "name": "drafts",
+      "root": "src",
+      "port": 1337
+    },{
+      "name": "testing",
+      "root": "build",
+      "port": 7090,
+      "proxy": {
+        "/api": "http://back-end:1207/app/testing"
       }
-    ]
+    },{
+      "name": "todo",
+      "root": "doc",
+      "port": 6565
+    }]
 
 --------
 

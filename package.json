@@ -1,6 +1,6 @@
 {
   "name": "luvi",
-  "version": "0.6.9",
+  "version": "0.7.2",
   "description": "dev server with simple api and easy config",
   "homepage": "https://github.com/zacanger/luvi.git",
   "author": "zacanger",
