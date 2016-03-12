@@ -1,11 +1,14 @@
+'use strict'
+
 // from https://github.com/Scytl/freddie
 
-var fs            = require('fs')
-  , url           = require('url')
-  , httpProxy     = require('http-proxy')
-  , cookieRewrite = require('./cookieRewrite')
+const
+  fs            = require('fs')
+, url           = require('url')
+, httpProxy     = require('http-proxy')
+, cookieRewrite = require('./cookieRewrite')
 
-var proxyMiddleware = function(target, options){
+var proxyMiddleware = (target, options) => {
   options = options || {}
 
   var context = options.context || ''
@@ -36,7 +39,7 @@ var proxyMiddleware = function(target, options){
     , headers : {host: urlFormatted.host}
   }
 
-  if(isSecured){a
+  if(isSecured){
     objConf.ssl = {
       key  : fs.readFileSync(target.key, 'utf8')
     , cert : fs.readFileSync(target.cert, 'utf8')
@@ -48,14 +51,14 @@ var proxyMiddleware = function(target, options){
   console.log(objConf)
   var proxy = httpProxy.createProxyServer(objConf)
 
-  proxy.on('error', function(err, req, res){
+  proxy.on('error', (err, req, res) => {
     var msg = err.toString() + ': ' + proxyTarget + req.url
     log(msg)
     res.writeHead(500, {'Content-Type': 'text/plain'})
     res.end(msg)
   })
 
-  proxy.on('proxyRes', function(proxyRes, req, res){
+  proxy.on('proxyRes', (proxyRes, req, res) => {
     var request = req.url.replace(path, '')
       , msg     = request + ' -> ' + proxyTarget + req.url
     log(msg)
@@ -63,19 +66,20 @@ var proxyMiddleware = function(target, options){
     var headers = proxyRes.headers
     if(!headers['set-cookie']){return}
 
-    headers['set-cookie'] = headers['set-cookie'].map(function(cookie){
-      return cookieRewrite(cookie, function(cookie){
-        if (cookie.path) {cookie.path = cookie.path.replace(path, '')}
+    headers['set-cookie'] = headers['set-cookie'].map((cookie) => {
+      return cookieRewrite(cookie, (cookie) => {
+        if(cookie.path){
+          cookie.path = cookie.path.replace(path, '')
+        }
         return cookie
       })
     })
   })
 
-  return function(req, res){
+  return (req, res) => {
     req.url = proxyContext + req.url
     proxy.web(req, res)
   }
 }
 
 module.exports = proxyMiddleware
-

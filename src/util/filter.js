@@ -1,12 +1,13 @@
 'use strict'
 
-var isArrayLike = require('./isArrayLike')
-  , each        = require('./each')
+const
+  isArrayLike = require('./isArrayLike')
+, each        = require('./each')
 
-var filter = function(list, fn){
+var filter = (list, fn) => {
   var isArr    = isArrayLike(list)
     , filtered = isArr ? [] : {}
-  each(list, function(item, index){
+  each(list, (item, index) => {
     if(fn(item, index)){
       if(isArr){
         index = filtered.length
@@ -18,4 +19,3 @@ var filter = function(list, fn){
 }
 
 module.exports = filter
-

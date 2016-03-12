@@ -1,8 +1,11 @@
-var cookie    = require('cookie')
-  , parse     = cookie.parse
-  , serialize = cookie.serialize
+'use strict'
 
-var cookieRewrite = function(cookie, fn){
+const
+  cookie    = require('cookie')
+, parse     = cookie.parse
+, serialize = cookie.serialize
+
+var cookieRewrite = (cookie, fn) => {
   var tokens   = cookie.split(/; */)
     , pair     = parse(tokens.shift())
     , name     = Object.keys(pair)[0]
@@ -29,4 +32,3 @@ var cookieRewrite = function(cookie, fn){
 }
 
 module.exports = cookieRewrite
-

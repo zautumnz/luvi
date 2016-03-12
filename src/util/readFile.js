@@ -1,8 +1,10 @@
 'use strict'
 
-var fs = require('fs')
-  , path = require('path')
-  , readFile = function(){
+const
+  fs = require('fs')
+, path = require('path')
+
+var readFile = () => {
   var file = path.resolve.apply(null, arguments)
   try {
     return fs.readFileSync(file, {encoding: 'utf8'})
@@ -12,4 +14,3 @@ var fs = require('fs')
 }
 
 module.exports = readFile
-
