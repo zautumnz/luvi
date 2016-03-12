@@ -1,11 +1,10 @@
 'use strict'
 
-const each = require('./each')
-
-var mix = () => {
+var each = require('./each')
+  , mix = function(){
   var mixed = {}
-  each(arguments, (obj) => {
-    each(obj, (item, index) => {
+  each(arguments, function(obj){
+    each(obj, function(item, index){
       mixed[index] = item
     })
   })
@@ -13,3 +12,4 @@ var mix = () => {
 }
 
 module.exports = mix
+

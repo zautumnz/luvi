@@ -1,11 +1,10 @@
 'use strict'
 
-const
-  path          = require('path')
-, readFile      = require('./readFile')
-, stripComments = require('strip-json-comments')
+var path          = require('path')
+  , readFile      = require('./readFile')
+  , stripComments = require('strip-json-comments')
 
-var readJSON = () => {
+var readJSON = function(){
   var file    = path.resolve.apply(null, arguments)
     , content = readFile(file)
   if(!content){
@@ -19,3 +18,4 @@ var readJSON = () => {
 }
 
 module.exports = readJSON
+

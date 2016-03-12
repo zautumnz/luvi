@@ -1,10 +1,9 @@
 'use strict'
 
-const
-  isDefined   = require('./isDefined')
-, isArrayLike = require('./isArrayLike')
+var isDefined   = require('./isDefined')
+  , isArrayLike = require('./isArrayLike')
 
-var iterateArray = (arr, fn) => {
+var iterateArray = function(arr, fn){
   for(var index = 0, len = arr.length; index < len; index++){
     var exit = fn(arr[index], index)
     if(isDefined(exit)){
@@ -13,7 +12,7 @@ var iterateArray = (arr, fn) => {
   }
 }
 
-var iterateObject = (obj, fn) => {
+var iterateObject = function(obj, fn){
   for(var prop in obj){
     var exit = fn(obj[prop], prop)
     if(isDefined(exit)){
@@ -22,7 +21,7 @@ var iterateObject = (obj, fn) => {
   }
 }
 
-var each = (list, fn) => {
+var each = function(list, fn){
   if(isArrayLike(list)){
     return iterateArray(list, fn)
   }
@@ -30,3 +29,4 @@ var each = (list, fn) => {
 }
 
 module.exports = each
+
