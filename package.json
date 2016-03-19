@@ -1,21 +1,13 @@
 {
   "name": "luvi",
-  "version": "0.8.2",
   "description": "dev server with nifty extras & simple & easy config & api.",
+  "version": "0.8.3",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
-  "license": "WTFPL",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zacanger/luvi.git"
+  "bin": {
+    "luvi": "src/cli.js"
   },
   "bugs": {
     "url": "https://github.com/zacanger/luvi/issues"
-  },
-  "homepage": "https://github.com/zacanger/luvi#readme",
-  "main": "src/luvi.js",
-  "preferGlobal": true,
-  "bin": {
-    "luvi": "src/cli.js"
   },
   "dependencies": {
     "connect": "^3.4.1",
@@ -26,15 +18,23 @@
     "serve-static": "^1.10.2",
     "strip-json-comments": "^2.0.1"
   },
+  "homepage": "https://github.com/zacanger/luvi#readme",
   "keywords": [
-    "static",
-    "server",
+    "development",
+    "http",
+    "https",
+    "multi",
     "proxy",
     "server",
-    "http",
-    "development",
-    "multi",
-    "https"
-  ]
+    "server",
+    "static"
+  ],
+  "license": "WTFPL",
+  "main": "src/luvi.js",
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zacanger/luvi.git"
+  }
 }
 
