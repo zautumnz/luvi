@@ -1,10 +1,11 @@
 'use strict'
 
-var each = require('./each')
-  , mix = function(){
-  var mixed = {}
-  each(arguments, function(obj){
-    each(obj, function(item, index){
+const each = require('./each')
+
+function mix(){
+  let mixed = {}
+  each(arguments, (obj) => {
+    each(obj, (item, index) => {
       mixed[index] = item
     })
   })

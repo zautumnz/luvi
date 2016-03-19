@@ -1,27 +1,28 @@
 'use strict'
 
-var isDefined   = require('./isDefined')
-  , isArrayLike = require('./isArrayLike')
+const
+  isDefined   = require('./isDefined')
+, isArrayLike = require('./isArrayLike')
 
-var iterateArray = function(arr, fn){
-  for(var index = 0, len = arr.length; index < len; index++){
-    var exit = fn(arr[index], index)
+function iterateArray(arr, fn){
+  for(let index = 0, len = arr.length; index < len; index++){
+    let exit = fn(arr[index], index)
     if(isDefined(exit)){
       return exit
     }
   }
 }
 
-var iterateObject = function(obj, fn){
-  for(var prop in obj){
-    var exit = fn(obj[prop], prop)
+function iterateObject(obj, fn){
+  for(let prop in obj){
+    let exit = fn(obj[prop], prop)
     if(isDefined(exit)){
       return exit
     }
   }
 }
 
-var each = function(list, fn){
+function each(list, fn){
   if(isArrayLike(list)){
     return iterateArray(list, fn)
   }
