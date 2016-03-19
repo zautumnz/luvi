@@ -15,7 +15,7 @@ function beacon(port, fn){
 
   function onError(err){
     server.removeListener('listening', onListen)
-    if(err.code !== 'EADDRINUSE' && err.code !== 'EACCES'){
+    if (err.code !== 'EADDRINUSE' && err.code !== 'EACCES') {
       return fn(err)
     }
     beacon(port + 1, fn)

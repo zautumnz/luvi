@@ -9,7 +9,7 @@ function readJSON(){
   let
     file    = path.resolve.apply(null, arguments)
   , content = readFile(file)
-  if(!content){
+  if (!content) {
     return
   }
   try {

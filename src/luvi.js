@@ -10,11 +10,11 @@ const
 , proxy       = require('./util/proxy')
 , beacon      = require('./util/beacon')
 
-var logger = function(serverName, middlewareName){
+function logger(serverName, middlewareName){
   return console.log.bind(console, serverName, middlewareName + ':')
 }
 
-var defaults = {
+const defaults = {
   root     : process.cwd()
 , port     : 4444
 , name     : 'luvi'
@@ -28,7 +28,7 @@ var luvi = function(options){
   var config = mix(defaults, options)
     , app    = connect()
 
-  if(config.proxy){
+  if (config.proxy) {
     each(config.proxy, (target, context) => {
       app.use(context, proxy(target, {
         context : context
