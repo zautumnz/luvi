@@ -1,6 +1,6 @@
 'use strict'
 
-var isNumber = function(arg){
+function isNumber(arg){
   return typeof arg === 'number'
 }
 

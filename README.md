@@ -1,4 +1,4 @@
-# luvi
+# luvi ღ
 
 --------
 
@@ -35,14 +35,12 @@ In a path with a `.luvi.json` file, running `luvi` will follow the options in th
 unless any options are passed; if there are multiple servers in the `.luvi.json` file,
 every server's options will be overridden. Project root is `cwd` by default.
 
-    $ luvi                           # launches the default server
-    $ luvi foo bar                   # starts luvi servers `foo` & `bar`
-    $ luvi -p 1337                   # serves from specified port--must be root to use ports below 1024
-    $ luvi -r /path/to/www/root      # serves from specified directory
-    $ luvi -c /path/to/config.json   # uses a non-default config file
-    $ luvi -n                        # ignores the config file in `cwd`--useful for options like `-r`
-    $ luvi -v                        # display's luvi's version
-    $ luvi -h                        # shows a version of this help dialog
+    $ luvi                       # launches the default server
+    $ luvi foo bar               # starts luvi servers `foo` & `bar`
+    $ luvi -p 1337               # serves from specified port (must be root to use ports below 1024)
+    $ luvi -r /path/to/www/root  # serves from the specified directory
+    $ luvi -v                    # display's luvi's version
+    $ luvi -h                    # shows a version of this help dialog
 
 ### .luvi.json
 
@@ -102,17 +100,19 @@ it will return an HTTP error response.
 
 * root
   * `root: '/path/to/document/root'`
-  * _Str_ Path where your static files are placed. Server only allows access to files in this directory. Usually where you'd have `index.html`. Can be absolute or relative. Defaults to `process.cwd()`.
+  * _Str_ Path where your static files are placed. Server only allows access to files in this directory.
+    Usually where you'd have `index.html`. Can be absolute or relative. Default : `process.cwd()`
 * port
   * `port: 3000`
-  * _Int_ Port on which to listen. If specified port is busy, `luvi` will look for a free port--increments number until free port is found. Defaults to `4444`.
+  * _Int_ Port on which to listen. If specified port is busy, `luvi` will look for a free port. Default : `4444`.
 * name
   * `name: 'foo'`
-  * _Str_ Server name. Useful for launching multiple servers, and for keeping track in logs. Defaults to `luvi`.
+  * _Str_ Server name. Useful for launching multiple servers, and for keeping track in logs. Default : `luvi`.
 * proxy
   * `proxy: {'/api': 'http://back-end:9090/api;}`
-  * _({context:url})_ Map of request contexts to back-end URLs. Supports HTTP and HTTPS. Multiple mappings can be defined here. Defaults to `undefined`.
+  * _({context:url})_ Map of request contexts to back-end URLs. Supports HTTP and HTTPS.
+    Multiple mappings can be defined here. Defaults : `undefined`.
 * onListen
   * `onListen: function(name, port){console.log(name, 'is listening on', port)}`
-  * _function(name,port)_ Called when `luvi` starts listening. Defaults to a `console.log()` as in the above example.
+  * _function(name,port)_ Called when `luvi` starts listening. Default : `console.log()` (as above).
 

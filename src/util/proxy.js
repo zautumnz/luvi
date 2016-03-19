@@ -1,20 +1,25 @@
+'use strict'
+
 // from https://github.com/Scytl/freddie
 
-var fs            = require('fs')
-  , url           = require('url')
-  , httpProxy     = require('http-proxy')
-  , cookieRewrite = require('./cookieRewrite')
+const
+  fs            = require('fs')
+, url           = require('url')
+, httpProxy     = require('http-proxy')
+, cookieRewrite = require('./cookieRewrite')
 
-var proxyMiddleware = function(target, options){
+function proxyMiddleware(target, options){
   options = options || {}
 
-  var context = options.context || ''
-    , log     = options.log || console.log
+  var
+    context   = options.context || ''
+  , log       = options.log || console.log
+  , isSecured = false
+  , urlFormatted
 
-  var urlFormatted, isSecured = false
-  if(typeof target === 'object'){
+  if (typeof target === 'object') {
     urlFormatted = url.parse(target.url)
-    isSecured = target.hasOwnProperty('cert')
+    isSecured    = target.hasOwnProperty('cert')
   } else {
     urlFormatted = url.parse(target)
   }

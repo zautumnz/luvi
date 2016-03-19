@@ -1,15 +1,12 @@
-the luvi server
 
+ღ  luvi (a server)
+------------------
 usage:
-
-  luvi                           # launch default server
-  luvi foo bar                   # start luvi servers `foo` & `bar`
-  luvi -p 1337                   # port to listen on for requests
-  luvi -r /path/to/www/root      # root dir to serve
-  luvi -c /path/to/config.json   # use non-default config file
-  luvi -n                        # ignore `.luvi.json` in cwd
-  luvi -v                        # luvi version
-  luvi -h                        # this help
-
-see the readme for config options and api usage
-
+    ღ luvi                   # launch default server
+    ღ luvi foo bar           # start servers `foo` & `bar`
+    ღ luvi -p 1337           # listen on specified port
+    ღ luvi -r /path/to/root  # serve from specified dir
+    ღ luvi -v                # luvi version
+    ღ luvi -h                # this help
+                             --------------------
+see the readme for config options and api usage ღ

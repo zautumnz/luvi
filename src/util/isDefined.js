@@ -1,6 +1,6 @@
 'use strict'
 
-var isDefined = function(arg){
+function isDefined(arg){
   return typeof arg !== 'undefined'
 }
 

@@ -1,7 +1,8 @@
 'use strict'
 
-var isNumber = require('./isNumber')
-  , isArrayLike = function(arg){
+const isNumber = require('./isNumber')
+
+function isArrayLike(arg){
   return arg && isNumber(arg.length)
 }
 
