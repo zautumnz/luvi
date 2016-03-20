@@ -3,7 +3,6 @@
 const
   path          = require('path')
 , readFile      = require('./readFile')
-, stripComments = require('strip-json-comments')
 
 function readJSON(){
   let
@@ -13,11 +12,10 @@ function readJSON(){
     return
   }
   try {
-    return JSON.parse(stripComments(content))
+    return JSON.parse(content)
   } catch(e){
     return console.error('error parsing JSON:', file)
   }
 }
 
 module.exports = readJSON
-

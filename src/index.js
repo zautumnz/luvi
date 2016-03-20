@@ -15,7 +15,7 @@ const
 , argv        = minimist(process.argv.slice(2))
 , log         = console.log
 , configFile  = argv.config || ('.' + pkg.name + '.json')
-, config = readJSON(configFile)
+, config      = readJSON(configFile)
 
 let servers   = isArrayLike(config) ? config : [config]
 
@@ -35,4 +35,3 @@ if (argv._.length) {
 each(servers, (server) => {
   luvi(mix(server, argv))
 })
-

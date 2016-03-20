@@ -1,24 +1,24 @@
 {
   "name": "luvi",
   "description": "dev server with nifty extras & simple & easy config & api.",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
-  "bin": {
-    "luvi": "src/cli.js"
+  "main": "src/index.js",
+  "preferGlobal": true,
+  "bin": "src/index.js",
+  "scripts": {
+    "start": "node src",
+    "test": "echo 'tests are coming, eventually, i promise!'"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zacanger/luvi.git"
+  },
+  "homepage": "https://github.com/zacanger/luvi#readme",
   "bugs": {
     "url": "https://github.com/zacanger/luvi/issues"
   },
-  "dependencies": {
-    "connect": "^3.4.1",
-    "cookie": "^0.2.3",
-    "http-proxy": "^1.13.2",
-    "minimist": "^1.2.0",
-    "opener": "^1.4.1",
-    "serve-static": "^1.10.2",
-    "strip-json-comments": "^2.0.1"
-  },
-  "homepage": "https://github.com/zacanger/luvi#readme",
+  "license": "WTFPL",
   "keywords": [
     "development",
     "http",
@@ -29,12 +29,12 @@
     "server",
     "static"
   ],
-  "license": "WTFPL",
-  "main": "src/luvi.js",
-  "preferGlobal": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zacanger/luvi.git"
+  "dependencies": {
+    "connect": "^3.4.1",
+    "cookie": "^0.2.3",
+    "http-proxy": "^1.13.2",
+    "minimist": "^1.2.0",
+    "opener": "^1.4.1",
+    "serve-static": "^1.10.2"
   }
 }
-
