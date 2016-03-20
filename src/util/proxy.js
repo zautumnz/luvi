@@ -40,7 +40,7 @@ function proxyUtil(target, options){
   })
 
   proxy.on('proxyRes', (proxyRes, req, res) => {
-    log(req.method, req.url.replace(path, ''), host + req.url, proxyRes.statusCode)
+    log(req.url.replace(path, '') + ' -> ' + host + req.url)
     let headers = proxyRes.headers
     if (!headers['set-cookie']) {
       return
