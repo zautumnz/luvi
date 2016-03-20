@@ -6,13 +6,14 @@ const
 , connect     = require('connect')
 , serveStatic = require('serve-static')
 , mix         = require('./util/mix')
+, log         = require('./util/log')
 , each        = require('./util/each')
 , proxy       = require('./util/proxy')
 , beacon      = require('./util/beacon')
 , notFound    = require('./util/notFound')
 
 function logger(serverName, middlewareName){
-  return console.log.bind(console, serverName, middlewareName + ':')
+  return log.bind(log, serverName, middlewareName + ':')
 }
 
 const defaults = {
