@@ -9,6 +9,7 @@ const
 , each        = require('./util/each')
 , proxy       = require('./util/proxy')
 , beacon      = require('./util/beacon')
+, notFound    = require('./util/notFound')
 
 function logger(serverName, middlewareName){
   return console.log.bind(console, serverName, middlewareName + ':')
@@ -18,15 +19,16 @@ const defaults = {
   root     : process.cwd()
 , port     : 4444
 , name     : 'luvi'
-, onListen : function(serverName, port){
+, onListen(serverName, port){
     console.log(serverName, 'is listening on', port)
     opener('http://localhost:' + port)
   }
 }
 
-var luvi = function(options){
-  var config = mix(defaults, options)
-    , app    = connect()
+const luvi = function(options){
+  let
+    config = mix(defaults, options)
+  , app    = connect()
 
   if (config.proxy) {
     each(config.proxy, (target, context) => {
@@ -39,6 +41,10 @@ var luvi = function(options){
 
   app.use(serveStatic(config.root))
 
+  if (config.notFound) {
+    app.use(notFound(config.notFound))
+  }
+
   beacon(config.port, (err, port) => {
     if(err){
       throw err
@@ -50,4 +56,3 @@ var luvi = function(options){
 }
 
 module.exports = luvi
-
