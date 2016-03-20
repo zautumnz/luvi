@@ -1,20 +1,7 @@
-
-/**
- * proxy
- * =====
- *
- * Proxy to HTTPS without using certs
- * ----------------------------------
- *
- * Use `secure: false` in the proxy configuration to access HTTPS targets
- * without cert
- *
- * Rewrite request Host header by using the proxy target
- * -----------------------------------------------------
- *
- * Use `headers: { host: <new host> }` in proxy configuration to rewrite the
- * `Host` header with the current proxy target
- */
+// Use `secure: false` in the proxy configuration to access HTTPS targets without cert
+// Rewrite request Host header by using the proxy target
+// Use `headers: { host: <new host> }` in proxy configuration to rewrite the
+// `Host` header with the current proxy target
 
 'use strict'
 

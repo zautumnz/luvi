@@ -64,7 +64,8 @@ Use the `name` option to keep track of servers in logs.
     },{
       "name": "todo",
       "root": "doc",
-      "port": 6565
+      "port": 6565,
+      "notFound": "/var/www/404.html"
     }]
 
 --------
@@ -101,18 +102,26 @@ it will return an HTTP error response.
 * root
   * `root: '/path/to/document/root'`
   * _Str_ Path where your static files are placed. Server only allows access to files in this directory.
-    Usually where you'd have `index.html`. Can be absolute or relative. Default : `process.cwd()`
+    Usually where you'd have `index.html`. Can be absolute or relative.
+  * Default : `process.cwd()`
 * port
   * `port: 3000`
-  * _Int_ Port on which to listen. If specified port is busy, `luvi` will look for a free port. Default : `4444`.
+  * _Int_ Port on which to listen. If specified port is busy, `luvi` will look for a free port.
+  * Default : `4444`.
 * name
   * `name: 'foo'`
-  * _Str_ Server name. Useful for launching multiple servers, and for keeping track in logs. Default : `luvi`.
+  * _Str_ Server name. Useful for launching multiple servers, and for keeping track in logs.
+  * Default : `luvi`.
 * proxy
   * `proxy: {'/api': 'http://back-end:9090/api;}`
   * _({context:url})_ Map of request contexts to back-end URLs. Supports HTTP and HTTPS.
-    Multiple mappings can be defined here. Defaults : `undefined`.
+    Multiple mappings can be defined here.
+  * Default : `undefined`.
 * onListen
   * `onListen: function(name, port){console.log(name, 'is listening on', port)}`
-  * _function(name,port)_ Called when `luvi` starts listening. Default : `console.log()` (as above).
-
+  * _function(name,port)_ Called when `luvi` starts listening.
+  * Default : `console.log()` (as above).
+* notFound
+  * `notFound`: `'/path/to/404.html'`
+  * _Str_ Path to a custom 404 page.
+  * Default : `undefined`.
