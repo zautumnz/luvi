@@ -7,7 +7,6 @@
     luvi listening on 4444
 
 By default, `luvi` acts as a static server, serving the files in `cwd`.
-It can also redirect requests to a back-end.
 On launch, `luvi` will open a tab in your default browser pointing to your defined root.
 
 --------
@@ -56,11 +55,7 @@ Use the `name` option to keep track of servers in logs.
       "port": 1337
     },{
       "name": "testing",
-      "root": "build",
-      "port": 7090,
-      "proxy": {
-        "/api": "http://back-end:1207/app/testing"
-      }
+      "root": "build"
     },{
       "name": "todo",
       "root": "doc",
@@ -90,13 +85,6 @@ and use `cwd` as the root to serve.
 Multiple servers can be launched from the same script, with different configs,
 by calling `luvi()` again with different options.
 
-If you define a `proxy` property and a request matches one of the specified
-contexts, that request will be handled by the proxy middleware.
-
-If the proxy middleware doesn't handle the request, it'll be passed on to
-the static middleware. If the static middleware can't handle the request,
-it will return an HTTP error response.
-
 #### options
 
 * root
@@ -112,11 +100,6 @@ it will return an HTTP error response.
   * `name: 'foo'`
   * _Str_ Server name. Useful for launching multiple servers, and for keeping track in logs.
   * Default : `luvi`.
-* proxy
-  * `proxy: {'/api': 'http://back-end:9090/api;}`
-  * _({context:url})_ Map of request contexts to back-end URLs. Supports HTTP and HTTPS.
-    Multiple mappings can be defined here.
-  * Default : `undefined`.
 * onListen
   * `onListen: function(name, port){console.log(name, 'is listening on', port)}`
   * _function(name,port)_ Called when `luvi` starts listening.

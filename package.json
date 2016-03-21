@@ -1,7 +1,7 @@
 {
   "name": "luvi",
   "description": "dev server with nifty extras & simple & easy config & api.",
-  "version": "0.8.5",
+  "version": "0.8.6",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
   "main": "src/index.js",
   "preferGlobal": true,
@@ -24,7 +24,6 @@
     "http",
     "https",
     "multi",
-    "proxy",
     "server",
     "server",
     "static"
@@ -32,7 +31,6 @@
   "dependencies": {
     "connect": "^3.4.1",
     "cookie": "^0.2.3",
-    "http-proxy": "^1.13.2",
     "minimist": "^1.2.0",
     "opener": "^1.4.1",
     "serve-static": "^1.10.2"
