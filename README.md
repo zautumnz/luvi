@@ -11,6 +11,10 @@ On launch, `luvi` will open a tab in your default browser pointing to your defin
 
 --------
 
+## BREAKING CHANGES
+
+As of version 0.8.6, `luvi` no longer has a proxying utility.
+
 ## Installation & Usage
 
     $ npm i -g luvi
