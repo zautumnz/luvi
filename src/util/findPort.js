@@ -4,26 +4,25 @@
 
 const net = require('net')
 
-function beacon(port, fn){
-  let server = net.createServer(function(){})
+function findPort(port, cb){
+  let server = net.createServer(() => {})
 
   function onListen(){
     server.removeListener('error', onError)
     server.close()
-    fn(null, port)
+    cb(null, port)
   }
 
   function onError(err){
     server.removeListener('listening', onListen)
     if (err.code !== 'EADDRINUSE' && err.code !== 'EACCES') {
-      return fn(err)
+      return cb(err)
     }
-    beacon(port + 1, fn)
+    findPort(port + 1, cb)
   }
   server.once('error', onError)
   server.once('listening', onListen)
   server.listen(port)
 }
 
-module.exports = beacon
-
+module.exports = findPort
