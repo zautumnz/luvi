@@ -28,11 +28,11 @@ const luvi = options => {
 
   app.use(serveStatic(config.root))
 
-  app.use(liveReload({port : 35729}))
-
   if (config.notFound) {
     app.use(notFound(config.notFound))
   }
+
+  app.use(liveReload({port : 35729}))
 
   findPort(config.port, (err, port) => {
     if(err){
