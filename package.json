@@ -1,7 +1,7 @@
 {
   "name": "luvi",
-  "description": "dev server with nifty extras & simple & easy config & api.",
-  "version": "0.8.6",
+  "description": "dev server with nifty extras and simple, easy config and api.",
+  "version": "0.8.7",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
   "main": "src/index.js",
   "preferGlobal": true,
