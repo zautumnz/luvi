@@ -6,39 +6,24 @@ const
 , connect     = require('connect')
 , serveStatic = require('serve-static')
 , mix         = require('./util/mix')
-, log         = require('./util/log')
 , each        = require('./util/each')
-, proxy       = require('./util/proxy')
 , beacon      = require('./util/beacon')
 , notFound    = require('./util/notFound')
-
-function logger(serverName, middlewareName){
-  return log.bind(log, serverName, middlewareName + ':')
-}
 
 const defaults = {
   root     : process.cwd()
 , port     : 4444
 , name     : 'luvi'
-, onListen(serverName, port){
-    console.log(serverName, 'is listening on', port)
+, onListen(name, port){
+    console.log(name, 'is listening on', port)
     opener('http://localhost:' + port)
   }
 }
 
-const luvi = function(options){
+const luvi = options => {
   let
     config = mix(defaults, options)
   , app    = connect()
-
-  if (config.proxy) {
-    each(config.proxy, (target, context) => {
-      app.use(context, proxy(target, {
-        context : context
-      , log     : logger(config.name, 'proxy')
-      }))
-    })
-  }
 
   app.use(serveStatic(config.root))
 
