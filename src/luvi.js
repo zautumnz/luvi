@@ -5,7 +5,6 @@ const
 , opener      = require('opener')
 , connect     = require('connect')
 , serveStatic = require('serve-static')
-, liveReload  = require('connect-livereload')
 , mix         = require('./util/mix')
 , each        = require('./util/each')
 , findPort    = require('./util/findPort')
@@ -32,8 +31,6 @@ const luvi = options => {
     app.use(notFound(config.notFound))
   }
 
-  app.use(liveReload({port : 35729}))
-
   findPort(config.port, (err, port) => {
     if(err){
       throw err
@@ -45,3 +42,4 @@ const luvi = options => {
 }
 
 module.exports = luvi
+
