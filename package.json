@@ -1,7 +1,7 @@
 {
   "name": "luvi",
   "description": "dev server with nifty extras and simple, easy config and api.",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
   "license": "WTFPL",
   "main": "src/index.js",
@@ -35,3 +35,4 @@
     "serve-static": "^1.10.2"
   }
 }
+
