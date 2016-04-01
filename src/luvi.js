@@ -7,7 +7,7 @@ const
 , serveStatic = require('serve-static')
 , mix         = require('./util/mix')
 , each        = require('./util/each')
-, beacon      = require('./util/beacon')
+, findPort    = require('./util/findPort')
 , notFound    = require('./util/notFound')
 
 const defaults = {
@@ -31,7 +31,7 @@ const luvi = options => {
     app.use(notFound(config.notFound))
   }
 
-  beacon(config.port, (err, port) => {
+  findPort(config.port, (err, port) => {
     if(err){
       throw err
     }
@@ -42,3 +42,4 @@ const luvi = options => {
 }
 
 module.exports = luvi
+
