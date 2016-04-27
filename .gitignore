@@ -13,8 +13,8 @@
 *.swp
 *.tar
 *~
+x/
 .completer.hist
 node_modules
-todo
 .luvi.json
 
