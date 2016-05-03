@@ -1,12 +1,12 @@
 
-ღ  luvi (a server)
+❦  luvi (a server)
 ------------------
 usage:
-    ღ luvi                   # launch default server
-    ღ luvi foo bar           # start servers `foo` & `bar`
-    ღ luvi -p 1337           # listen on specified port
-    ღ luvi -r /path/to/root  # serve from specified dir
-    ღ luvi -v                # luvi version
-    ღ luvi -h                # this help
+    ❦ luvi                   # launch default server
+    ❦ luvi foo bar           # start servers `foo` & `bar`
+    ❦ luvi -p 1337           # listen on specified port
+    ❦ luvi -r /path/to/root  # serve from specified dir
+    ❦ luvi -v                # luvi version
+    ❦ luvi -h                # this help
                              --------------------
-see the readme for config options and api usage ღ
+see the readme for config options and api usage ❦

@@ -27,11 +27,12 @@ if (argv.version) {return log(pkg.version)}
 if (argv.help)    {return log(readFile(__dirname, 'help.md'))}
 
 if (argv._.length) {
-  servers = filter(servers, (item) => {
+  servers = filter(servers, item => {
     return item && argv._.indexOf(item.name) >= 0
   })
 }
 
-each(servers, (server) => {
+each(servers, server => {
   luvi(mix(server, argv))
 })
+
