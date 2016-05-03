@@ -13,9 +13,10 @@ function readJSON(){
   }
   try {
     return JSON.parse(content)
-  } catch(e){
+  } catch(e) {
     return console.error('error parsing JSON:', file)
   }
 }
 
 module.exports = readJSON
+

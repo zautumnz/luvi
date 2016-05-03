@@ -32,7 +32,7 @@ const luvi = options => {
   }
 
   findPort(config.port, (err, port) => {
-    if(err){
+    if (err) {
       throw err
     }
     http.createServer(app).listen(port, () => {

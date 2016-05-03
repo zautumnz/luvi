@@ -1,4 +1,4 @@
-# luvi ღ
+# luvi ❦
 
 --------
 
@@ -8,6 +8,10 @@
 
 By default, `luvi` acts as a static server, serving the files in `cwd`.
 On launch, `luvi` will open a tab in your default browser pointing to your defined root.
+
+Originally forked from [freddie](http://npm.im/freddie).
+Why? Because freddie did some things that I really liked, but also did a lot of things
+that I really don't need, and doesn't do some things that I really do want.
 
 --------
 
@@ -112,3 +116,4 @@ by calling `luvi()` again with different options.
   * `notFound`: `'/path/to/404.html'`
   * _Str_ Path to a custom 404 page.
   * Default : `undefined`.
+
