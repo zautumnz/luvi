@@ -1,12 +1,15 @@
 {
   "name": "luvi",
   "description": "dev server with nifty extras and simple, easy config and api.",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
   "license": "WTFPL",
   "main": "src/index.js",
   "preferGlobal": true,
-  "bin": "src/index.js",
+  "bin": {
+    "luvi": "./src/index.js",
+    "lv": "./src/index.js"
+  },
   "scripts": {
     "start": "node src",
     "test": "echo 'tests are coming, eventually, i promise!'"
