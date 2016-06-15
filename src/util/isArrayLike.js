@@ -2,9 +2,6 @@
 
 const isNumber = require('./isNumber')
 
-function isArrayLike(arg){
-  return arg && isNumber(arg.length)
-}
+const isArrayLike = arg => arg && isNumber(arg.length)
 
 module.exports = isArrayLike
-

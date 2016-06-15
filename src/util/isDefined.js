@@ -1,8 +1,5 @@
 'use strict'
 
-function isDefined(arg){
-  return typeof arg !== 'undefined'
-}
+const isDefined = arg => typeof arg !== 'undefined'
 
 module.exports = isDefined
-

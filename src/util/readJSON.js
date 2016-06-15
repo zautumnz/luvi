@@ -19,4 +19,3 @@ function readJSON(){
 }
 
 module.exports = readJSON
-

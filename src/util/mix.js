@@ -13,4 +13,3 @@ function mix(){
 }
 
 module.exports = mix
-

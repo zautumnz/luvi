@@ -1,8 +1,5 @@
 'use strict'
 
-function isNumber(arg){
-  return typeof arg === 'number'
-}
+const isNumber = arg => typeof arg === 'number'
 
 module.exports = isNumber
-

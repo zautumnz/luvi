@@ -22,4 +22,3 @@ function filter(list, fn){
 }
 
 module.exports = filter
-

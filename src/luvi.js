@@ -15,8 +15,8 @@ const defaults = {
 , port     : 4444
 , name     : 'luvi'
 , onListen(name, port){
-    console.log(name, 'is listening on', port)
-    opener('http://localhost:' + port)
+    console.log(`${name} is listening on ${port}`)
+    opener(`http://localhost:${port}`)
   }
 }
 
@@ -42,4 +42,3 @@ const luvi = options => {
 }
 
 module.exports = luvi
-

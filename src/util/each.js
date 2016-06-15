@@ -30,4 +30,3 @@ function each(list, fn){
 }
 
 module.exports = each
-
