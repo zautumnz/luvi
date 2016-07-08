@@ -16,7 +16,7 @@ const defaults = {
 , port     : 4444
 , name     : 'luvi'
 , onListen(name, port){
-    console.log(clrs(`${name} is listening on ${port}`, 'cyan'))
+    console.log(clrs(`♥ ${name} is listening on ${port}`, 'magenta'))
     opener(`http://localhost:${port}`)
   }
 }

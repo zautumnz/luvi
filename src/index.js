@@ -24,8 +24,8 @@ if (argv.v)       {argv.version = argv.v}
 if (argv.h)       {argv.help    = argv.h}
 if (argv.r)       {argv.root    = argv.r}
 if (argv.p)       {argv.port    = argv.p}
-if (argv.version) {return log(clrs(pkg.version, 'yellow'))}
-if (argv.help)    {return log(clrs(readFile(__dirname, 'help.md'), 'red'))}
+if (argv.version) {return log(clrs(`♥ luvi ${pkg.version}`, 'yellow'))}
+if (argv.help)    {return log(clrs(readFile(__dirname, 'help.md'), 'cyan'))}
 
 if (argv._.length) {
   servers = filter(servers, item => {
