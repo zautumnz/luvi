@@ -2,11 +2,11 @@
 
 const
   http        = require('http')
-, opener      = require('opener')
 , connect     = require('connect')
 , serveStatic = require('serve-static')
 , mix         = require('./util/mix')
 , each        = require('./util/each')
+, open        = require('./util/open')
 , clrs        = require('./util/color')
 , findPort    = require('./util/findPort')
 , notFound    = require('./util/notFound')
@@ -17,7 +17,7 @@ const defaults = {
 , name     : 'luvi'
 , onListen(name, port){
     console.log(clrs.magenta(`♥ ${name} is listening on ${port}`))
-    opener(`http://localhost:${port}`)
+    open(`http://localhost:${port}`)
   }
 }
 

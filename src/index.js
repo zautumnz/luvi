@@ -15,8 +15,10 @@ const
 , pkg         = readJSON(__dirname, '..', 'package.json')
 , argv        = minimist(process.argv.slice(2))
 , log         = console.log
-, configFile  = argv.config || '.luvi.json'
+, configFile  = argv.config || `.${pkg.name}.json`
 , config      = readJSON(configFile)
+
+console.log(configFile)
 
 let servers   = isArrayLike(config) ? config : [config]
 
