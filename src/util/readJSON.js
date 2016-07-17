@@ -4,13 +4,15 @@ const
   path          = require('path')
 , readFile      = require('./readFile')
 
-function readJSON(){
-  let
+function readJSON () {
+  const
     file    = path.resolve.apply(null, arguments)
   , content = readFile(file)
+
   if (!content) {
     return
   }
+
   try {
     return JSON.parse(content)
   } catch(e) {
