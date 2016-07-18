@@ -4,7 +4,7 @@ const
   fs   = require('fs')
 , path = require('path')
 
-function notFound (config) {
+const notFound = config => {
   const
     status   = 404
   , filePath = config

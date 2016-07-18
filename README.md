@@ -2,52 +2,67 @@
 
 --------
 
-    $ cd /path/to/your/project
-    $ luvi
-    luvi listening on 4444
+```shell
+$ cd /path/to/your/project
+$ luvi
+luvi listening on 4444
+```
 
 By default, `luvi` acts as a static server, serving the files in `cwd`.
-On launch, `luvi` will open a tab in your default browser pointing to your defined root.
+On launch, `luvi` will open a tab in your default browser pointing to your
+defined root.
 
 Originally forked from [freddie](http://npm.im/freddie).
-Why? Because freddie did some things that I really liked, but also did a lot of things
-that I really don't need, and doesn't do some things that I really do want.
+
+Why? Because freddie did some things that I really liked, but also did a lot of
+things that I really don't need, and doesn't do some things that I really do
+want.
 
 --------
 
 ## BREAKING CHANGES
 
-As of version 0.8.6, `luvi` no longer has a proxying utility.
+As of version 0.8.6, `luvi` no longer has a proxying utility. If you need that,
+please use [freddie](http://npm.im/freddie) instead.
 
 ## Installation & Usage
 
-    $ npm i -g luvi
-    $ luvi [server, ...] [options]
+```shell
+$ npm i -g luvi
+$ luvi [server, ...] [options]
+```
 
 `luvi` looks inside `cwd` for a `.luvi.json` config file.
 If there is no config file, the default static server is launched.
 
 #### [server, ...]
 
-    $ luvi foo bar
-    foo listening on port 4444
-    bar listening on port 8888
+```shell
+$ luvi foo bar
+foo listening on port 4444
+bar listening on port 8888
+```
 
-List of named servers to launch. Only names matching the ones in config file will be launched.
+List of named servers to launch. Only names matching the ones in config file
+will be launched.
 
 ### [options]
 
 Command-line arguments take priority over config files and defaults.
-In a path with a `.luvi.json` file, running `luvi` will follow the options in the file,
-unless any options are passed; if there are multiple servers in the `.luvi.json` file,
-every server's options will be overridden. Project root is `cwd` by default.
 
-    $ luvi                       # launches the default server
-    $ luvi foo bar               # starts luvi servers `foo` & `bar`
-    $ luvi -p 1337               # serves from specified port (must be root to use ports below 1024)
-    $ luvi -r /path/to/www/root  # serves from the specified directory
-    $ luvi -v                    # display's luvi's version
-    $ luvi -h                    # shows a version of this help dialog
+In a path with a `.luvi.json` file, running `luvi` will follow the options in
+the file, unless any options are passed; if there are multiple servers in the
+`.luvi.json` file, every server's options will be overridden. Project root is
+`cwd` by default.
+
+```shell
+$ luvi           # launches the default server
+$ luvi foo bar   # starts luvi servers `foo` & `bar`
+$ luvi -p 1337   # serves from specified port (for < 1024, must be root)
+$ luvi -r /path  # serves from the specified directory
+$ luvi -v        # display's luvi's version
+$ luvi -h        # shows a version of this help dialog
+```
 
 ### .luvi.json
 
@@ -57,38 +72,43 @@ The object will be passed directly to `luvi`.
 For multiple servers, simply use an array of single-server configs.
 Use the `name` option to keep track of servers in logs.
 
-    [{
-      "name": "drafts",
-      "root": "src",
-      "port": 1337
-    },{
-      "name": "testing",
-      "root": "build"
-    },{
-      "name": "todo",
-      "root": "doc",
-      "port": 6565,
-      "notFound": "/var/www/404.html"
-    }]
+```json
+[{
+  "name": "drafts",
+  "root": "src",
+  "port": 1337
+},{
+  "name": "testing",
+  "root": "build"
+},{
+  "name": "todo",
+  "root": "doc",
+  "port": 6565,
+  "notFound": "/var/www/404.html"
+}]
+```
 
 --------
 
 ## API
 
-You can pass an object to `luvi()` for custom settings; otherwise, these defaults are applied:
+You can pass an object to `luvi()` for custom settings; otherwise, these
+defaults are applied:
 
-    var luvi = require('luvi')
-    luvi({
-        name : 'luvi'
-      , root : process.cwd()
-      , port : 4444
-    })
+```javascript
+const luvi = require('luvi')
+luvi({
+    name : 'luvi'
+  , root : process.cwd()
+  , port : 4444
+})
+```
 
 This is exactly the same as just calling `luvi()`, with no config object.
 
-These defaults are merged with whatever you pass, so if, for example,
-you only pass in a custom server name, `luvi` will still run on port 4444
-and use `cwd` as the root to serve.
+These defaults are merged with whatever you pass, so if, for example, you only
+pass in a custom server name, `luvi` will still run on port 4444 and use `cwd`
+as the root to serve.
 
 Multiple servers can be launched from the same script, with different configs,
 by calling `luvi()` again with different options.
@@ -116,4 +136,3 @@ by calling `luvi()` again with different options.
   * `notFound`: `'/path/to/404.html'`
   * _Str_ Path to a custom 404 page.
   * Default : `undefined`.
-
