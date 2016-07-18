@@ -14,9 +14,11 @@ defined root.
 
 Originally forked from [freddie](http://npm.im/freddie).
 
-Why? Because freddie did some things that I really liked, but also did a lot of
+Why? Because `freddie` did some things that I really liked, but also did a lot of
 things that I really don't need, and doesn't do some things that I really do
 want.
+
+Why `4444`? Because I'm OCD, and I really like the number 4.
 
 --------
 
@@ -24,6 +26,10 @@ want.
 
 As of version 0.8.6, `luvi` no longer has a proxying utility. If you need that,
 please use [freddie](http://npm.im/freddie) instead.
+
+As of version 0.9.13, `src/util` is now `src/lib`.
+
+--------
 
 ## Installation & Usage
 

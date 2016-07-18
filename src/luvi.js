@@ -4,20 +4,20 @@ const
   http        = require('http')
 , connect     = require('connect')
 , serveStatic = require('serve-static')
-, mix         = require('./util/mix')
-, each        = require('./util/each')
-, open        = require('./util/open')
-, clrs        = require('./util/color')
-, findPort    = require('./util/findPort')
-, notFound    = require('./util/notFound')
+, mix         = require('./lib/mix')
+, each        = require('./lib/each')
+, open        = require('./lib/open')
+, clrs        = require('./lib/color')
+, findPort    = require('./lib/findPort')
+, notFound    = require('./lib/notFound')
 
 const defaults = {
   root     : process.cwd()
 , port     : 4444
 , name     : 'luvi'
-, onListen(name, port){
-    console.log(clrs.magenta(`♥ ${name} is listening on ${port}`))
-    open(`http://localhost:${port}`)
+, onListen (name, port) {
+    console.log(clrs.magenta(`♡ ${name} is listening on ${port}`))
+    open(`http://127.0.0.1:${port}`)
   }
 }
 

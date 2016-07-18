@@ -5,13 +5,13 @@
 const
   minimist    = require('minimist')
 , luvi        = require('./luvi')
-, mix         = require('./util/mix')
-, each        = require('./util/each')
-, clrs        = require('./util/color')
-, filter      = require('./util/filter')
-, readJSON    = require('./util/readJSON')
-, readFile    = require('./util/readFile')
-, isArrayLike = require('./util/isArrayLike')
+, mix         = require('./lib/mix')
+, each        = require('./lib/each')
+, clrs        = require('./lib/color')
+, filter      = require('./lib/filter')
+, readJSON    = require('./lib/readJSON')
+, readFile    = require('./lib/readFile')
+, isArrayLike = require('./lib/isArrayLike')
 , pkg         = readJSON(__dirname, '..', 'package.json')
 , argv        = minimist(process.argv.slice(2))
 , log         = console.log
@@ -26,7 +26,7 @@ if (argv.v)       {argv.version = argv.v}
 if (argv.h)       {argv.help    = argv.h}
 if (argv.r)       {argv.root    = argv.r}
 if (argv.p)       {argv.port    = argv.p}
-if (argv.version) {return log(clrs.yellow(`♥ luvi ${pkg.version}`))}
+if (argv.version) {return log(clrs.yellow(`♡ luvi ${pkg.version}`))}
 if (argv.help)    {return log(clrs.cyan(readFile(__dirname, 'help.md')))}
 
 if (argv._.length) {
