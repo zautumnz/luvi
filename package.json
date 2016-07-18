@@ -1,7 +1,7 @@
 {
   "name": "luvi",
   "description": "Simple dev server with simple config and API.",
-  "version": "0.9.15",
+  "version": "0.9.16",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
   "license": "WTFPL",
   "main": "src/index.js",
@@ -11,7 +11,7 @@
     "lv": "./src/index.js"
   },
   "scripts": {
-    "prepublish": "npm run test",
+    "prepublish": "npm test",
     "start": "node src",
     "test": "ava -c 8 -v \"src/**/test.js\""
   },
