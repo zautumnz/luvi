@@ -17,17 +17,16 @@ const
 , log         = console.log
 , configFile  = argv.config || `.${pkg.name}.json`
 , config      = readJSON(configFile)
-
-console.log(configFile)
-
+, help        = require('./help')
+, version     = `♡ luvi ${pkg.version}`
 let servers   = isArrayLike(config) ? config : [config]
 
 if (argv.v)       {argv.version = argv.v}
 if (argv.h)       {argv.help    = argv.h}
 if (argv.r)       {argv.root    = argv.r}
 if (argv.p)       {argv.port    = argv.p}
-if (argv.version) {return log(clrs.yellow(`♡ luvi ${pkg.version}`))}
-if (argv.help)    {return log(clrs.cyan(readFile(__dirname, 'help.md')))}
+if (argv.version) {return log(clrs.yellow(version))}
+if (argv.help)    {return log(clrs.cyan(help))}
 
 if (argv._.length) {
   servers = filter(servers, item => {
