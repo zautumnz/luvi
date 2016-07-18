@@ -142,3 +142,13 @@ by calling `luvi()` again with different options.
   * `notFound`: `'/path/to/404.html'`
   * _Str_ Path to a custom 404 page.
   * Default : `undefined`.
+
+--------
+
+## Contributing
+
+Please do, if you'd like! The one thing I'd really like to get going is
+live reloading, but any issue reports/fixes are welcome, and feature requests
+can definitely be discussed.
+
+License: WTFPL
