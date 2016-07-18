@@ -1,8 +1,18 @@
 const
   test        = require('ava')
+, util        = require('util')
 , isNumber    = require('./isNumber')
 , isArrayLike = require('./isArrayLike')
 , isDefined   = require('./isDefined')
+, mix         = require('./mix')
+, color       = require('./color')
+// , findPort    = require('./findPort')
+// , readFile    = require('./readFile')
+// , notFound    = require('./notFound')
+// , open        = require('./open')
+// , readJSON    = require('./readJSON')
+// , filter      = require('./filter')
+// , each        = require('./each')
 
 // isNumber
 test('isNumber returns false for string', t => {
@@ -49,4 +59,21 @@ test('isDefined returns true for defined var', t => {
 test('isDefined returns true for fn that returns defined var', t => {
   const foo = () => 'foo'
   t.true(isDefined(foo()))
+})
+
+// mix
+test('mix mixes two strings into an object', t => {
+  const mixed = {'0' : 'g', '1' : 'h', '2' : 'j', '3' : 'k', '4' : 'l'}
+  t.deepEqual(mix('asdf', 'ghjkl'), mixed)
+})
+test('mix mixes two objects', t => {
+  const mixed = {a : 'a', b : 'b'}
+  t.deepEqual(mix({a : 'a'}, {b : 'b'}), mixed)
+})
+
+// color
+test('color.blue()', t => {
+  const col = util.inspect(color.blue('foo'))
+  const str = '\'\\u001b[34mfoo\\u001b[39m\''
+  t.is(col, str)
 })
