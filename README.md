@@ -24,10 +24,10 @@ Why `4444`? Because I'm OCD, and I really like the number 4.
 
 ## BREAKING CHANGES
 
-As of version 0.8.6, `luvi` no longer has a proxying utility. If you need that,
-please use [freddie](http://npm.im/freddie) instead.
-
-As of version 0.9.13, `src/util` is now `src/lib`.
+* 0.8.6: `luvi` no longer has a proxying utility. If you need that, please use
+  [freddie](http://npm.im/freddie) instead.
+* 0.9.13: `src/util` is now `src/lib`.
+* 0.9.19: `src/` is now project root (`src/lib` is now `/lib`)
 
 --------
 

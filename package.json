@@ -1,19 +1,19 @@
 {
   "name": "luvi",
   "description": "Simple dev server with simple config and API.",
-  "version": "0.9.18",
+  "version": "0.9.19",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
   "license": "WTFPL",
-  "main": "src/index.js",
+  "main": "index.js",
   "preferGlobal": true,
   "bin": {
-    "luvi": "./src/index.js",
-    "lv": "./src/index.js"
+    "luvi": "./index.js",
+    "lv": "./index.js"
   },
   "scripts": {
     "prepublish": "npm test",
-    "start": "node src",
-    "test": "ava -c 8 -v \"src/**/test.js\""
+    "start": "node .",
+    "test": "ava -c 8 -v lib/test.js"
   },
   "homepage": "https://github.com/zacanger/luvi#readme",
   "repository": {

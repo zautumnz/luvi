@@ -12,7 +12,7 @@ const
 , readJSON    = require('./lib/readJSON')
 , readFile    = require('./lib/readFile')
 , isArrayLike = require('./lib/isArrayLike')
-, pkg         = readJSON(__dirname, '..', 'package.json')
+, pkg         = readJSON(__dirname, 'package.json')
 , argv        = minimist(process.argv.slice(2))
 , log         = console.log
 , configFile  = argv.config || `.${pkg.name}.json`
