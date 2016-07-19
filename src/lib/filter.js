@@ -5,7 +5,7 @@ const
 , each        = require('./each')
 
 function filter (list, fn) {
-  let
+  const
     isArr    = isArrayLike(list)
   , filtered = isArr ? [] : {}
 

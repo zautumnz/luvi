@@ -9,7 +9,7 @@ const
 , each        = require('./each')
 , readFile    = require('./readFile')
 , readJSON    = require('./readJSON')
-// , filter      = require('./filter')
+, filter      = require('./filter')
 // , findPort    = require('./findPort')
 // , notFound    = require('./notFound')
 // , open        = require('./open')
@@ -104,3 +104,12 @@ test('readJSON reads JSON', t => {
   t.is(readJSON(p).name, 'luvi')
 })
 
+// filter
+test('filter, when passed dummy fn, return the arr also passed', t => {
+  const ar = ['a', 'b']
+  const fn = a => a
+  t.deepEqual(filter(ar, fn), ar)
+})
+test('filter, when passed an obj, will return an obj', t => {
+  t.is(typeof filter({}), 'object')
+})
