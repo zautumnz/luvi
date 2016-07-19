@@ -6,13 +6,13 @@ const
 , isDefined   = require('./isDefined')
 , mix         = require('./mix')
 , color       = require('./color')
+, each        = require('./each')
 // , findPort    = require('./findPort')
 // , readFile    = require('./readFile')
 // , notFound    = require('./notFound')
 // , open        = require('./open')
 // , readJSON    = require('./readJSON')
 // , filter      = require('./filter')
-// , each        = require('./each')
 
 // isNumber
 test('isNumber returns false for string', t => {
@@ -76,4 +76,19 @@ test('color.blue()', t => {
   const col = util.inspect(color.blue('foo'))
   const str = '\'\\u001b[34mfoo\\u001b[39m\''
   t.is(col, str)
+})
+
+// each
+test('each returns undefined with nothing passed', t => {
+  t.is(each(), undefined)
+})
+test('each returns first in passed array when passed id fn', t => {
+  const a = ['x', 'y', 'z']
+  const f = (b) => b
+  t.is(each(a, f), 'x')
+})
+test('each does the same with obj', t => {
+  const o = {a : 'a', b : 'b', c : 'c'}
+  const f = a => a
+  t.is(each(o, f), 'a')
 })
