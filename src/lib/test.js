@@ -7,12 +7,12 @@ const
 , mix         = require('./mix')
 , color       = require('./color')
 , each        = require('./each')
+, readFile    = require('./readFile')
+, readJSON    = require('./readJSON')
+// , filter      = require('./filter')
 // , findPort    = require('./findPort')
-// , readFile    = require('./readFile')
 // , notFound    = require('./notFound')
 // , open        = require('./open')
-// , readJSON    = require('./readJSON')
-// , filter      = require('./filter')
 
 // isNumber
 test('isNumber returns false for string', t => {
@@ -92,3 +92,15 @@ test('each does the same with obj', t => {
   const f = a => a
   t.is(each(o, f), 'a')
 })
+
+// readFile
+test('readFile reads files', t => {
+  t.is(readFile('./testfile'), 'asdfghjkl;\n')
+})
+
+// readJSON
+test('readJSON reads JSON', t => {
+  const p = '../../package.json'
+  t.is(readJSON(p).name, 'luvi')
+})
+
