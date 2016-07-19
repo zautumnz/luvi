@@ -28,6 +28,7 @@ Why `4444`? Because I'm OCD, and I really like the number 4.
   [freddie](http://npm.im/freddie) instead.
 * 0.9.13: `src/util` is now `src/lib`.
 * 0.9.19: `src/` is now project root (`src/lib` is now `/lib`)
+* 0.9.20: `package.json` is fixed so `luvi` works as a module again. Sorry about that!
 
 --------
 
