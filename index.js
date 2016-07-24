@@ -18,7 +18,7 @@ const
 , configFile  = argv.config || `.${pkg.name}.json`
 , config      = readJSON(configFile)
 , help        = require('./help')
-, version     = `♡ luvi ${pkg.version}`
+, version     = `❤ luvi ${pkg.version}`
 let servers   = isArrayLike(config) ? config : [config]
 
 if (argv.v)       {argv.version = argv.v}
