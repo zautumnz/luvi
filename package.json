@@ -1,7 +1,7 @@
 {
   "name": "luvi",
   "description": "Simple dev server with simple config and API.",
-  "version": "0.9.22",
+  "version": "0.9.23",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
   "license": "WTFPL",
   "main": "luvi.js",
@@ -13,7 +13,8 @@
   "scripts": {
     "prepublish": "npm test",
     "start": "node .",
-    "test": "ava -c 8 -v lib/test.js"
+    "test": "ava -c 4 -v lib/test.js",
+    "test:watch": "ava -c 4 -v -w lib/test.js"
   },
   "homepage": "https://github.com/zacanger/luvi#readme",
   "repository": {
@@ -35,9 +36,9 @@
   "dependencies": {
     "connect": "^3.4.1",
     "minimist": "^1.2.0",
-    "serve-static": "^1.10.2"
+    "serve-static": "^1.11.1"
   },
   "devDependencies": {
-    "ava": "^0.15.2"
+    "ava": "^0.16.0"
   }
 }
