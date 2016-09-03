@@ -11,7 +11,6 @@ const
 , clrs        = require('./lib/color')
 , filter      = require('./lib/filter')
 , readJSON    = require('./lib/readJSON')
-, readFile    = require('./lib/readFile')
 , isArrayLike = require('./lib/isArrayLike')
 , pkg         = readJSON(__dirname, 'package.json')
 , argv        = minimist(process.argv.slice(2))

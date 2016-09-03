@@ -5,7 +5,6 @@ const
 , connect     = require('connect')
 , serveStatic = require('serve-static')
 , mix         = require('./lib/mix')
-, each        = require('./lib/each')
 , open        = require('./lib/open')
 , clrs        = require('./lib/color')
 , findPort    = require('./lib/findPort')
@@ -16,7 +15,7 @@ const defaults = {
 , port     : 4444
 , name     : 'luvi'
 , onListen (name, port) {
-    console.log(clrs.magenta(`❤ ${name} is listening on ${port}`))
+    console.log(clrs.magenta(`♥ ${name} is listening on ${port}`))
     open(`http://127.0.0.1:${port}`)
   }
 }
