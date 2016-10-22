@@ -1,7 +1,7 @@
 {
   "name": "luvi",
   "description": "Sev server with simple config and API.",
-  "version": "0.9.33",
+  "version": "0.9.34",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
   "license": "WTFPL",
   "main": "luvi.js",
@@ -40,5 +40,8 @@
   },
   "devDependencies": {
     "ava": "^0.16.0"
+  },
+  "engines": {
+    "node": ">=6.0.0"
   }
 }
