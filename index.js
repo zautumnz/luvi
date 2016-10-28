@@ -24,6 +24,7 @@ if (argv.v)       {argv.version = argv.v}
 if (argv.h)       {argv.help    = argv.h}
 if (argv.r)       {argv.root    = argv.r}
 if (argv.p)       {argv.port    = argv.p}
+if (argv.n)       {argv.noOpen  = argv.n}
 if (argv.version) {return l(clrs.yellow(version))}
 if (argv.help)    {return l(clrs.cyan(help))}
 

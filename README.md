@@ -10,7 +10,7 @@ luvi listening on 4444
 
 By default, `luvi` acts as a static server, serving the files in `cwd`.
 On launch, `luvi` will open a tab in your default browser pointing to your
-defined root.
+defined root (you can pass a `-n` flag to disable this).
 
 Originally forked from [freddie](http://npm.im/freddie).
 
@@ -68,6 +68,7 @@ $ luvi           # launches the default server
 $ luvi foo bar   # starts luvi servers `foo` & `bar`
 $ luvi -p 1337   # serves from specified port (for < 1024, must be root)
 $ luvi -r /path  # serves from the specified directory
+$ luvi -n        # doesn't open the browser after start
 $ luvi -v        # display's luvi's version
 $ luvi -h        # shows a version of this help dialog
 ```
@@ -144,6 +145,10 @@ by calling `luvi()` again with different options.
   * `notFound`: `'/path/to/404.html'`
   * _Str_ Path to a custom 404 page.
   * Default : `undefined`.
+* noOpen
+  * `noOpen: true`
+  * _Bool_ Will not open the browser on server start.
+  * Default: `undefined`.
 
 --------
 

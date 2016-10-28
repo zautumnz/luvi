@@ -14,16 +14,17 @@ const defaults = {
   root     : process.cwd()
 , port     : 4444
 , name     : 'luvi'
-, onListen (name, port) {
+, onListen (name, port, shouldOpen) {
     console.log(clrs.magenta(`♥ ${name} is listening on ${port}`))
-    open(`http://127.0.0.1:${port}`)
+    shouldOpen && open(`http://127.0.0.1:${port}`)
   }
 }
 
 const luvi = options => {
   const
-    config = mix(defaults, options)
-  , app    = connect()
+    config     = mix(defaults, options)
+  , app        = connect()
+  , shouldOpen = !options.noOpen
 
   app.use(serveStatic(config.root))
 
@@ -36,7 +37,7 @@ const luvi = options => {
       throw err
     }
     http.createServer(app).listen(port, () => {
-      config.onListen(config.name, port)
+      config.onListen(config.name, port, shouldOpen)
     })
   })
 }
