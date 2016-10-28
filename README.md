@@ -86,10 +86,11 @@ Use the `name` option to keep track of servers in logs.
   "name": "drafts",
   "root": "src",
   "port": 1337
-},{
+}, {
   "name": "testing",
-  "root": "build"
-},{
+  "root": "build",
+  "noOpen": true
+}, {
   "name": "todo",
   "root": "doc",
   "port": 6565,
@@ -107,9 +108,9 @@ defaults are applied:
 ```javascript
 const luvi = require('luvi')
 luvi({
-    name : 'luvi'
-  , root : process.cwd()
-  , port : 4444
+  name : 'luvi'
+, root : process.cwd()
+, port : 4444
 })
 ```
 
@@ -140,7 +141,7 @@ by calling `luvi()` again with different options.
 * onListen
   * `onListen: function(name, port){console.log(name, 'is listening on', port)}`
   * _function(name,port)_ Called when `luvi` starts listening.
-  * Default : `console.log()` (as above).
+  * Default : `console.log()` (as above) and opening the browser.
 * notFound
   * `notFound`: `'/path/to/404.html'`
   * _Str_ Path to a custom 404 page.
