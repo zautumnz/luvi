@@ -15,7 +15,7 @@ const defaults = {
 , port     : 4444
 , name     : 'luvi'
 , onListen (name, port, shouldOpen) {
-    console.log(clrs.magenta(`♥ ${name} is listening on ${port}`))
+    console.log(clrs.magenta(`❣ ${name} is listening on ${port}`))
     shouldOpen && open(`http://127.0.0.1:${port}`)
   }
 }
