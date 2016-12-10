@@ -155,8 +155,14 @@ by calling `luvi()` again with different options.
 
 ## Contributing
 
-Please do, if you'd like! The one thing I'd really like to get going is
-live reloading, but any issue reports/fixes are welcome, and feature requests
-can definitely be discussed.
+Please do, if you'd like! Any issue reports/fixes are welcome, and feature
+requests can definitely be discussed.
+
+* Things I'd like to get done at some point:
+  * Remove dependency on minimist
+  * Maybe remove dependency on serve-static
+  * Better unit tests, more code coverage
+* Things I'm not considering:
+  * Live reload. If you need this, use Browsersync, it's pretty swell.
 
 License: WTFPL
