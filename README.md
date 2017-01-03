@@ -1,4 +1,4 @@
-# luvi ❣
+# luvi ♡
 
 --------
 
@@ -64,13 +64,18 @@ the file, unless any options are passed; if there are multiple servers in the
 `cwd` by default.
 
 ```shell
-$ luvi           # launches the default server
-$ luvi foo bar   # starts luvi servers `foo` & `bar`
-$ luvi -p 1337   # serves from specified port (for < 1024, must be root)
-$ luvi -r /path  # serves from the specified directory
-$ luvi -n        # doesn't open the browser after start
-$ luvi -v        # display's luvi's version
-$ luvi -h        # shows a version of this help dialog
+♡ luvi (a server)
+------------------
+usage:
+    ♡ luvi           # launch default server
+    ♡ luvi foo bar   # start servers 'foo' & 'bar'
+    ♡ luvi -p 1337   # listen on specified port
+    ♡ luvi -r /path  # serve from specified dir
+    ♡ luvi -n        # doesn't open the browser after start
+    ♡ luvi -v        # luvi version
+    ♡ luvi -h        # this help
+                             --------------------
+see the readme for config options and api usage
 ```
 
 ### .luvi.json
@@ -159,8 +164,6 @@ Please do, if you'd like! Any issue reports/fixes are welcome, and feature
 requests can definitely be discussed.
 
 * Things I'd like to get done at some point:
-  * Remove dependency on minimist
-  * Maybe remove dependency on serve-static
   * Better unit tests, more code coverage
 * Things I'm not considering:
   * Live reload. If you need this, use Browsersync, it's pretty swell.
