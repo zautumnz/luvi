@@ -8,6 +8,8 @@ $ luvi
 luvi listening on 4444
 ```
 
+`luvi` is also accessible with the shorthand command `lv`.
+
 By default, `luvi` acts as a static server, serving the files in `cwd`.
 On launch, `luvi` will open a tab in your default browser pointing to your
 defined root (you can pass a `-n` flag to disable this).
