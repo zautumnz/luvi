@@ -20,20 +20,20 @@ const
 , version     = `♡ luvi ${pkg.version}`
 let servers   = isArrayLike(config) ? config : [config]
 
-if (argv.v)       {argv.version = argv.v}
-if (argv.h)       {argv.help    = argv.h}
-if (argv.r)       {argv.root    = argv.r}
-if (argv.p)       {argv.port    = argv.p}
-if (argv.n)       {argv.noOpen  = argv.n}
-if (argv.version) {return l(clrs.yellow(version))}
-if (argv.help)    {return l(clrs.cyan(help))}
+if (argv.v)       { argv.version = argv.v }
+if (argv.h)       { argv.help    = argv.h }
+if (argv.r)       { argv.root    = argv.r }
+if (argv.p)       { argv.port    = argv.p }
+if (argv.n)       { argv.noOpen  = argv.n }
+if (argv.version) { return l(clrs.yellow(version)) }
+if (argv.help)    { return l(clrs.cyan(help)) }
 
 if (argv._.length) {
-  servers = filter(servers, item =>
+  servers = filter(servers, (item) =>
     item && argv._.indexOf(item.name) >= 0
   )
 }
 
-each(servers, server => {
+each(servers, (server) => {
   luvi(mix(server, argv))
 })

@@ -20,7 +20,7 @@ const defaults = {
   }
 }
 
-const luvi = options => {
+const luvi = (options) => {
   const
     config     = mix(defaults, options)
   , app        = connect()
