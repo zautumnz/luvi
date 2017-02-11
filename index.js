@@ -3,21 +3,20 @@
 'use strict'
 
 const
-  minimist    = require('minimist')
+  z           = require('zeelib').default
+, minimist    = require('minimist')
 , luvi        = require('./luvi')
 , help        = require('./help')
-, mix         = require('./lib/mix')
-, each        = require('./lib/each')
-, clrs        = require('./lib/color')
-, filter      = require('./lib/filter')
 , readJSON    = require('./lib/readJSON')
-, isArrayLike = require('./lib/isArrayLike')
 , pkg         = readJSON(__dirname, 'package.json')
 , argv        = minimist(process.argv.slice(2))
 , l           = console.log
 , configFile  = argv.config || `.${pkg.name}.json`
 , config      = readJSON(configFile)
 , version     = `♡ luvi ${pkg.version}`
+, { each, mix, colorize, filter, isArrayLike } = z
+, clrs = colorize
+
 let servers   = isArrayLike(config) ? config : [config]
 
 if (argv.v)       { argv.version = argv.v }

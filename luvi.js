@@ -1,14 +1,13 @@
 'use strict'
 
 const
-  http        = require('http')
+  z           = require('zeelib').default
+, http        = require('http')
 , connect     = require('connect')
 , serveStatic = require('serve-static')
-, mix         = require('./lib/mix')
-, open        = require('./lib/open')
-, clrs        = require('./lib/color')
-, findPort    = require('./lib/findPort')
 , notFound    = require('./lib/notFound')
+, { colorize, mix, open, findPort } = z
+, clrs = colorize
 
 const defaults = {
   root     : process.cwd()
