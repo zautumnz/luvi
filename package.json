@@ -1,7 +1,7 @@
 {
   "name": "luvi",
   "description": "Dev server with simple config and API.",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
   "license": "WTFPL",
   "main": "luvi.js",
@@ -11,9 +11,7 @@
     "lv": "./index.js"
   },
   "scripts": {
-    "prepublish": "npm test",
-    "start": "node .",
-    "test": "node lib/test.js"
+    "start": "node ."
   },
   "homepage": "https://github.com/zacanger/luvi#readme",
   "repository": {
@@ -36,11 +34,9 @@
     "connect": "^3.5.1",
     "minimist": "^1.2.0",
     "serve-static": "^1.11.2",
-    "zeelib": "^0.3.9"
+    "zeelib": "^0.3.11"
   },
-  "devDependencies": {
-    "tape": "^4.6.3"
-  },
+  "devDependencies": {},
   "engines": {
     "node": ">=6.0.0"
   }
