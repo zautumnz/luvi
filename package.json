@@ -34,7 +34,7 @@
     "connect": "^3.5.1",
     "minimist": "^1.2.0",
     "serve-static": "^1.11.2",
-    "zeelib": "^0.3.11"
+    "zeelib": "^0.3.18"
   },
   "devDependencies": {},
   "engines": {
