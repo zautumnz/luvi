@@ -3,8 +3,7 @@
 'use strict'
 
 const
-  z           = require('zeelib').default
-, minimist    = require('minimist')
+  minimist    = require('minimist')
 , luvi        = require('./luvi')
 , help        = require('./help')
 , readJSON    = require('./lib/readJSON')
@@ -14,7 +13,7 @@ const
 , configFile  = argv.config || `.${pkg.name}.json`
 , config      = readJSON(configFile)
 , version     = `♡ luvi ${pkg.version}`
-, { each, mix, colorize, filter, isArrayLike } = z
+, { each, mix, colorize, filter, isArrayLike } = require('zeelib')
 , clrs = colorize
 
 let servers   = isArrayLike(config) ? config : [config]

@@ -1,12 +1,11 @@
 'use strict'
 
 const
-  z           = require('zeelib').default
-, http        = require('http')
+  http        = require('http')
 , connect     = require('connect')
 , serveStatic = require('serve-static')
 , notFound    = require('./lib/notFound')
-, { colorize, mix, open, findPort } = z
+, { colorize, mix, open, findPort } = require('zeelib')
 , clrs = colorize
 
 const defaults = {
