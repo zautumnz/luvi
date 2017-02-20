@@ -1,12 +1,11 @@
 'use strict'
 
-const
-  http        = require('http')
-, connect     = require('connect')
-, serveStatic = require('serve-static')
-, notFound    = require('./lib/notFound')
-, { colorize, mix, open, findPort } = require('zeelib')
-, clrs = colorize
+const http = require('http')
+const connect = require('connect')
+const serveStatic = require('serve-static')
+const notFound = require('./lib/notFound')
+const { colorize, mix, open, findPort } = require('zeelib')
+const clrs = colorize
 
 const defaults = {
   root     : process.cwd()
