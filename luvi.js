@@ -3,8 +3,7 @@
 const http = require('http')
 const connect = require('connect')
 const serveStatic = require('serve-static')
-const notFound = require('./lib/notFound')
-const { colorize, mix, open, findPort } = require('zeelib')
+const { colorize, mix, notFound, open, findPort } = require('zeelib')
 const clrs = colorize
 
 const defaults = {
