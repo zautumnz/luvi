@@ -2,21 +2,22 @@
 
 'use strict'
 
-const
-  minimist    = require('minimist')
-, luvi        = require('./luvi')
-, help        = require('./help')
-, readJSON    = require('./lib/readJSON')
-, pkg         = readJSON(__dirname, 'package.json')
-, argv        = minimist(process.argv.slice(2))
-, l           = console.log
-, configFile  = argv.config || `.${pkg.name}.json`
-, config      = readJSON(configFile)
-, version     = `♡ luvi ${pkg.version}`
-, { each, mix, colorize, filter, isArrayLike } = require('zeelib')
-, clrs = colorize
+const minimist = require('minimist')
+const luvi = require('./luvi')
+const help = require('./help')
+const readJSON = require('./lib/readJSON')
+const pkg = readJSON(__dirname, 'package.json')
+const argv = minimist(process.argv.slice(2))
+const l = console.log
+const configFile = argv.config || `.${pkg.name}.json`
+const config = readJSON(configFile)
+const version = `♡ luvi ${pkg.version}`
+const { each, mix, colorize, filter, isArrayLike } = require('zeelib')
+const clrs = colorize
 
-let servers   = isArrayLike(config) ? config : [config]
+let servers = isArrayLike(config)
+  ? config
+  : [ config ]
 
 if (argv.v)       { argv.version = argv.v }
 if (argv.h)       { argv.help    = argv.h }
