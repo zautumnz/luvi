@@ -162,12 +162,7 @@ by calling `luvi()` again with different options.
 
 ## Contributing
 
-Please do, if you'd like! Any issue reports/fixes are welcome, and feature
-requests can definitely be discussed.
+Please do, if you'd like! Any issue reports/fixes are welcome. I am not
+considering adding any features.
 
-* Things I'd like to get done at some point:
-  * Better unit tests, more code coverage
-* Things I'm not considering:
-  * Live reload. If you need this, use Browsersync, it's pretty swell.
-
-License: WTFPL
+License: [WTFPL](./LICENSE.md)
