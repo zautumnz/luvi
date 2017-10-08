@@ -3,9 +3,9 @@
 const http = require('http')
 const connect = require('connect')
 const serveStatic = require('serve-static')
+const notFound = require('./lib/notFound')
 const clrs = require('zeelib/lib/colorize').default
 const mix = require('zeelib/lib/mix').default
-const notFound = require('zeelib/lib/not-found').default
 const open = require('zeelib/lib/open').default
 const findPort = require('zeelib/lib/find-port').default
 
