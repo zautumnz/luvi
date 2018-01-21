@@ -165,4 +165,4 @@ by calling `luvi()` again with different options.
 Please do, if you'd like! Any issue reports/fixes are welcome. I am not
 considering adding any features.
 
-License: [WTFPL](./LICENSE.md)
+License: [MIT](./LICENSE.md)
