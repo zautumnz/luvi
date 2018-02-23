@@ -36,7 +36,7 @@ Why `4444`? Because I'm OCD, and I really like the number 4.
 
 --------
 
-## Installation & Usage
+## Installation and Usage
 
 ```shell
 $ npm i -g luvi
@@ -45,6 +45,9 @@ $ luvi [server, ...] [options]
 
 `luvi` looks inside `cwd` for a `.luvi.json` config file.
 If there is no config file, the default static server is launched.
+
+If you'd rather not install globally, you can use `npx`:
+`npx luvi [server, ...] [options]`.
 
 #### [server, ...]
 
@@ -83,27 +86,31 @@ see the readme for config options and api usage
 
 ### .luvi.json
 
-To configure a single server: `{"root":"public","port":9090}`.
+To configure a single server: `{ "root": "public", "port": 9090 }`.
 The object will be passed directly to `luvi`.
 
 For multiple servers, simply use an array of single-server configs.
 Use the `name` option to keep track of servers in logs.
 
 ```json
-[{
-  "name": "drafts",
-  "root": "src",
-  "port": 1337
-}, {
-  "name": "testing",
-  "root": "build",
-  "noOpen": true
-}, {
-  "name": "todo",
-  "root": "doc",
-  "port": 6565,
-  "notFound": "/var/www/404.html"
-}]
+[
+  {
+    "name": "drafts",
+    "root": "src",
+    "port": 1337
+  },
+  {
+    "name": "testing",
+    "root": "build",
+    "noOpen": true
+  },
+  {
+    "name": "todo",
+    "root": "doc",
+    "port": 6565,
+    "notFound": "/var/www/404.html"
+  }
+]
 ```
 
 --------
@@ -115,10 +122,11 @@ defaults are applied:
 
 ```javascript
 const luvi = require('luvi')
+
 luvi({
-  name : 'luvi'
-, root : process.cwd()
-, port : 4444
+  name: 'luvi',
+  root: process.cwd(),
+  port: 4444
 })
 ```
 
@@ -131,33 +139,27 @@ as the root to serve.
 Multiple servers can be launched from the same script, with different configs,
 by calling `luvi()` again with different options.
 
-#### options
+#### Options
 
-* root
-  * `root: '/path/to/document/root'`
-  * _Str_ Path where your static files are placed. Server only allows access to files in this directory.
+* root: `string` (default: `process.cwd()`)
+  * Path where your static files are placed. Server only allows access to files in this directory.
     Usually where you'd have `index.html`. Can be absolute or relative.
-  * Default : `process.cwd()`
-* port
-  * `port: 3000`
-  * _Int_ Port on which to listen. If specified port is busy, `luvi` will look for a free port.
-  * Default : `4444`.
-* name
-  * `name: 'foo'`
-  * _Str_ Server name. Useful for launching multiple servers, and for keeping track in logs.
-  * Default : `luvi`.
-* onListen
-  * `onListen: function(name, port){console.log(name, 'is listening on', port)}`
-  * _function(name,port)_ Called when `luvi` starts listening.
-  * Default : `console.log()` (as above) and opening the browser.
-* notFound
-  * `notFound`: `'/path/to/404.html'`
-  * _Str_ Path to a custom 404 page.
-  * Default : `undefined`.
-* noOpen
-  * `noOpen: true`
-  * _Bool_ Will not open the browser on server start.
-  * Default: `undefined`.
+  * Example: `root: '/path/to/document/root'`
+* port: `number` (default: `4444`)
+  * Port on which to listen. If specified port is busy, `luvi` will look for a free port.
+  * Example: `port: 3000`
+* name: `string` (default: `luvi`)
+  * Server name. Useful for launching multiple servers, and for keeping track in logs.
+  * Example: `name: 'foo'`
+* onListen: `(name: string, port: number): void` (Default: `console.log ; open`)
+  * Called when `luvi` starts listening.
+  * Example: `onListen: (name, port) => { console.log(name, 'is listening on', port) }`
+* notFound: `string` (default: `undefined`)
+  * Path to a custom 404 page.
+  * Example: `notFound: '/path/to/404.html'`
+* noOpen: `bool` (default: `undefined`)
+  * Will not open the browser on server start.
+  * Example: `noOpen: true`
 
 --------
 
