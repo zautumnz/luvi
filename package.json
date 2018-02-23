@@ -31,10 +31,10 @@
     "static"
   ],
   "dependencies": {
-    "connect": "3.6.5",
+    "connect": "3.6.6",
     "minimist": "1.2.0",
-    "serve-static": "1.13.1",
-    "zeelib": "5.0.0"
+    "serve-static": "1.13.2",
+    "zeelib": "6.1.4"
   },
   "devDependencies": {},
   "engines": {

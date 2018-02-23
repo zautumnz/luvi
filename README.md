@@ -26,6 +26,7 @@ Why `4444`? Because I'm OCD, and I really like the number 4.
 
 ## BREAKING CHANGES
 
+* 2.0.0: Switched to MIT license.
 * 0.8.6: `luvi` no longer has a proxying utility. If you need that, please use
   [freddie](http://npm.im/freddie) instead.
 * 0.9.13: `src/util` is now `src/lib`.
