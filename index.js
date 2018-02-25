@@ -29,6 +29,14 @@ const nope = () => {
 }
 
 const main = () => {
+  const shouldWarn = !!process.env.LUVI_USED_SHORTHAND
+  if (shouldWarn) {
+    l(clrs.red(`
+  Using luvi with the shorthand 'lv' command is deprecated
+  and will be removed in version 3.0.0. If you want to keep
+  the shorthand, add a Bash (or similar) alias.
+    `))
+  }
   if (argv.v) argv.version = argv.v
   if (argv.h) argv.help = argv.h
   if (argv.r) argv.root = argv.r
