@@ -1,5 +1,8 @@
 # luvi ♡
 
+*NOTE* the `lv` shorthand will be removed in v3.0.0. If you'd like to keep the
+shorthand, use a shell alias.
+
 --------
 
 ```shell
