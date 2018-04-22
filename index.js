@@ -10,12 +10,12 @@ const l = console.log
 const configFile = argv.config || `.${pkg.name}.json`
 const config = readJSON(configFile)
 const version = `♡ luvi ${pkg.version}`
-const each = require('zeelib/lib/each').default
-const mix = require('zeelib/lib/mix').default
-const clrs = require('zeelib/lib/colorize').default
-const filter = require('zeelib/lib/filter').default
-const isArrayLike = require('zeelib/lib/is-array-like').default
-const exit = require('zeelib/lib/exit').default
+const each = require('zeelib/lib/each')
+const mix = require('zeelib/lib/mix')
+const clrs = require('zeelib/lib/colorize')
+const filter = require('zeelib/lib/filter')
+const isArrayLike = require('zeelib/lib/is-array-like')
+const exit = require('zeelib/lib/exit')
 
 let servers = isArrayLike(config)
   ? config
