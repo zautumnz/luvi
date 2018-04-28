@@ -19,12 +19,6 @@ defined root (you can pass a `-n` flag to disable this).
 
 Originally forked from [freddie](http://npm.im/freddie).
 
-Why? Because `freddie` did some things that I really liked, but also did a lot of
-things that I really don't need, and doesn't do some things that I really do
-want.
-
-Why `4444`? Because I'm OCD, and I really like the number 4.
-
 --------
 
 ## Changes
@@ -32,8 +26,7 @@ Why `4444`? Because I'm OCD, and I really like the number 4.
 * 2.1.1: Deprecated `lv` shorthand. This will still work until it's removed in
   3.0.0. Please update any scripts using `lv` to use `luvi`.
 * 2.0.0: Switched to MIT license.
-* 0.8.6: `luvi` no longer has a proxying utility. If you need that, please use
-  [freddie](http://npm.im/freddie) instead.
+* 0.8.6: `luvi` no longer has a proxying utility.
 * 0.9.13: `src/util` is now `src/lib`.
 * 0.9.19: `src/` is now project root (`src/lib` is now `/lib`)
 * 0.9.20: `package.json` is fixed so `luvi` works as a module again. Sorry about that!
