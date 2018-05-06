@@ -37,12 +37,12 @@
     "connect": "3.6.6",
     "minimist": "1.2.0",
     "serve-static": "1.13.2",
-    "zeelib": "6.2.0"
+    "zeelib": "7.0.2"
   },
   "devDependencies": {
     "babel-eslint": "8.2.3",
     "eslint": "4.19.1",
-    "eslint-config-zacanger": "3.1.1",
+    "eslint-config-zacanger": "3.1.2",
     "eslint-plugin-babel": "5.1.0",
     "eslint-plugin-import": "2.11.0",
     "eslint-plugin-promise": "3.7.0",
