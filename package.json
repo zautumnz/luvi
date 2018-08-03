@@ -6,10 +6,7 @@
   "license": "MIT",
   "main": "lib/luvi.js",
   "preferGlobal": true,
-  "bin": {
-    "luvi": "./index.js",
-    "lv": "./index.js"
-  },
+  "bin": "./index.js",
   "scripts": {
     "preversion": "npm t",
     "start": "node ./index.js",
@@ -37,16 +34,16 @@
     "connect": "3.6.6",
     "minimist": "1.2.0",
     "serve-static": "1.13.2",
-    "zeelib": "7.0.2"
+    "zeelib": "8.0.0"
   },
   "devDependencies": {
-    "babel-eslint": "8.2.3",
-    "eslint": "4.19.1",
-    "eslint-config-zacanger": "3.1.2",
+    "babel-eslint": "8.2.6",
+    "eslint": "5.2.0",
+    "eslint-config-zacanger": "3.4.0",
     "eslint-plugin-babel": "5.1.0",
-    "eslint-plugin-import": "2.11.0",
-    "eslint-plugin-promise": "3.7.0",
-    "eslint-plugin-unicorn": "4.0.3"
+    "eslint-plugin-import": "2.13.0",
+    "eslint-plugin-promise": "3.8.0",
+    "eslint-plugin-unicorn": "5.0.0"
   },
   "engines": {
     "node": ">=8.11.1"

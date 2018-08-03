@@ -1,8 +1,5 @@
 # luvi ♡
 
-*NOTE* the `lv` shorthand will be removed in v3.0.0. If you'd like to keep the
-shorthand, use a shell alias.
-
 --------
 
 ```shell
@@ -10,8 +7,6 @@ $ cd /path/to/your/project
 $ luvi
 luvi listening on 4444
 ```
-
-`luvi` is also accessible with the shorthand command `lv`.
 
 By default, `luvi` acts as a static server, serving the files in `cwd`.
 On launch, `luvi` will open a tab in your default browser pointing to your
@@ -23,6 +18,7 @@ Originally forked from [freddie](http://npm.im/freddie).
 
 ## Changes
 
+* 3.0.0: Removed `lv` shorthand. Use a shell alias.
 * 2.1.1: Deprecated `lv` shorthand. This will still work until it's removed in
   3.0.0. Please update any scripts using `lv` to use `luvi`.
 * 2.0.0: Switched to MIT license.
