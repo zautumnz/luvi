@@ -1,7 +1,7 @@
 {
   "name": "luvi",
   "description": "Dev server with simple config and API.",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
   "license": "MIT",
   "main": "lib/luvi.js",
