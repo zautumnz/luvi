@@ -1,5 +1,7 @@
 # luvi ♡
 
+**Unmaintained** I recommend using `serve` or some other popular static file server.
+
 --------
 
 ```shell
