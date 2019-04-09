@@ -29,12 +29,6 @@ const nope = () => {
 }
 
 const main = () => {
-  if (process.argv[1].endsWith('/lv')) {
-    console.log('luvi: The `lv` shorthand will be deprecated')
-    console.log('in version 3.0.0. Please add a shell alias')
-    console.log('if you want to keep using `lv`.')
-    console.log('Example: `echo "alias lv=\'luvi\'" >> ~/.bashrc`')
-  }
   if (argv.v) argv.version = argv.v
   if (argv.h) argv.help = argv.h
   if (argv.r) argv.root = argv.r
