@@ -1,6 +1,6 @@
 # luvi ♡
 
-Dev server with simple config and API
+Dev server with simple config and API.
 
 ----
 
