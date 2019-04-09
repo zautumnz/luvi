@@ -1,6 +1,8 @@
 # luvi ♡
 
---------
+Dev server with simple config and API
+
+----
 
 ```shell
 $ cd /path/to/your/project
@@ -14,7 +16,7 @@ defined root (you can pass a `-n` flag to disable this).
 
 Originally forked from [freddie](http://npm.im/freddie).
 
---------
+----
 
 ## Changes
 
@@ -29,7 +31,7 @@ Originally forked from [freddie](http://npm.im/freddie).
 * 0.9.20: `package.json` is fixed so `luvi` works as a module again. Sorry about that!
 * 0.9.21: Please `npm rm -g luvi` and then `npm i -g luvi` to upgrade!
 
---------
+----
 
 ## Installation and Usage
 
@@ -108,7 +110,7 @@ Use the `name` option to keep track of servers in logs.
 ]
 ```
 
---------
+----
 
 ## API
 
@@ -156,7 +158,7 @@ by calling `luvi()` again with different options.
   * Will not open the browser on server start.
   * Example: `noOpen: true`
 
---------
+----
 
 ## Contributing
 
