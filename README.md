@@ -16,8 +16,6 @@ defined root (you can pass a `-n` flag to disable this).
 
 Originally forked from [freddie](http://npm.im/freddie).
 
-----
-
 ## Changes
 
 * 3.2.0: Un-deprecate, and add `.htm` and `.xhtml` support.
@@ -30,8 +28,6 @@ Originally forked from [freddie](http://npm.im/freddie).
 * 0.9.19: `src/` is now project root (`src/lib` is now `/lib`)
 * 0.9.20: `package.json` is fixed so `luvi` works as a module again. Sorry about that!
 * 0.9.21: Please `npm rm -g luvi` and then `npm i -g luvi` to upgrade!
-
-----
 
 ## Installation and Usage
 
@@ -110,8 +106,6 @@ Use the `name` option to keep track of servers in logs.
 ]
 ```
 
-----
-
 ## API
 
 You can pass an object to `luvi()` for custom settings; otherwise, these
@@ -158,11 +152,19 @@ by calling `luvi()` again with different options.
   * Will not open the browser on server start.
   * Example: `noOpen: true`
 
-----
+## Patreon Sponsors
+
+[![Patreon](https://img.shields.io/badge/patreon-donate-yellow.svg)](https://www.patreon.com/zacanger)
+
+This project is sponsored on [Patreon](https://www.patreon.com/zacanger) by:
+
+* Keeley Hammond
 
 ## Contributing
 
 Please do, if you'd like! Any issue reports/fixes are welcome. I am not
 considering adding any features.
 
-License: [MIT](./LICENSE.md)
+## License
+
+[MIT](./LICENSE.md)
