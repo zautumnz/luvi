@@ -37,7 +37,8 @@
     "zeelib": "8.6.0"
   },
   "devDependencies": {
-    "sortpack": "1.2.0"
+    "sortpack": "1.2.0",
+    "standard": "12.0.1"
   },
   "engines": {
     "node": ">=8.11.1"
