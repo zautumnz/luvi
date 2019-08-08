@@ -10,22 +10,17 @@ const l = console.log
 const configFile = argv.config || `.${pkg.name}.json`
 const config = readJSON(configFile)
 const version = `♡ luvi ${pkg.version}`
-const each = require('zeelib/lib/each')
-const mix = require('zeelib/lib/mix')
-const clrs = require('zeelib/lib/colorize')
-const filter = require('zeelib/lib/filter')
-const isArrayLike = require('zeelib/lib/is-array-like')
-const exit = require('zeelib/lib/exit')
+const clrs = require('zeelib/lib/colorize').default
 
-let servers = isArrayLike(config)
+let servers = Array.isArray(config)
   ? config
-  : [ config ]
+  : [config]
 
 const nope = () => {
   l(`
   Please require('luvi'), not ('luvi/index')
   `)
-  exit(1)
+  process.exit(1)
 }
 
 const main = () => {
@@ -38,13 +33,13 @@ const main = () => {
   if (argv.help) return l(clrs.cyan(help))
 
   if (argv._.length) {
-    servers = filter(servers, (item) =>
+    servers = servers.filter((item) =>
       item && argv._.indexOf(item.name) >= 0
     )
   }
 
-  each(servers, (server) => {
-    luvi(mix(server, argv))
+  servers.forEach((server) => {
+    luvi(Object.assign({}, server, argv))
   })
 }
 
