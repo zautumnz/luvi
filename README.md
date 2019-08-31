@@ -165,6 +165,4 @@ This project is sponsored on [Patreon](https://www.patreon.com/zacanger) by:
 Please do, if you'd like! Any issue reports/fixes are welcome. I am not
 considering adding any features.
 
-## License
-
-[MIT](./LICENSE.md)
+[LICENSE](./LICENSE.md)

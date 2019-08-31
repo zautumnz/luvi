@@ -3,7 +3,7 @@
   "description": "Dev server with simple config and API.",
   "version": "3.2.9",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
-  "license": "MIT",
+  "license": "LGPL-3.0",
   "main": "lib/luvi.js",
   "preferGlobal": true,
   "bin": "./index.js",
