@@ -18,6 +18,7 @@ Originally forked from [freddie](http://npm.im/freddie).
 
 ## Changes
 
+* 4.0.0: Switch to LGPL-3.0
 * 3.2.0: Un-deprecate, and add `.htm` and `.xhtml` support.
 * 3.0.0: Removed `lv` shorthand. Use a shell alias.
 * 2.1.1: Deprecated `lv` shorthand. This will still work until it's removed in
