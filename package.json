@@ -34,10 +34,10 @@
     "connect": "3.7.0",
     "minimist": "1.2.0",
     "serve-static": "1.14.1",
-    "zeelib": "11.0.2"
+    "zeelib": "11.0.5"
   },
   "devDependencies": {
-    "sortpack": "2.0.1",
+    "sortpack": "2.0.4",
     "standard": "14.3.1"
   },
   "engines": {
