@@ -1,8 +1,12 @@
 {
   "name": "luvi",
   "description": "Dev server with simple config and API.",
-  "version": "4.0.5",
+  "version": "4.0.6",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
+  "funding": {
+    "type": "ko-fi",
+    "url": "https://ko-fi.com/zacanger"
+  },
   "license": "LGPL-3.0",
   "main": "lib/luvi.js",
   "preferGlobal": true,
@@ -44,9 +48,5 @@
   },
   "engines": {
     "node": ">=8.11.1"
-  },
-  "funding": {
-    "type": "ko-fi",
-    "url": "https://ko-fi.com/zacanger"
   }
 }
