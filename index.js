@@ -12,9 +12,8 @@ const config = readJSON(configFile)
 const version = `♡ luvi ${pkg.version}`
 const clrs = require('zeelib/lib/colorize').default
 
-let servers = Array.isArray(config)
-  ? config
-  : [config]
+// eslint-disable-next-line fp/no-let
+let servers = Array.isArray(config) ? config : [config]
 
 const nope = () => {
   l(`
@@ -24,18 +23,30 @@ const nope = () => {
 }
 
 const main = () => {
-  if (argv.v) argv.version = argv.v
-  if (argv.h) argv.help = argv.h
-  if (argv.r) argv.root = argv.r
-  if (argv.p) argv.port = argv.p
-  if (argv.n) argv.noOpen = argv.n
-  if (argv.version) return l(clrs.yellow(version))
-  if (argv.help) return l(clrs.cyan(help))
+  if (argv.v) {
+    argv.version = argv.v
+  }
+  if (argv.h) {
+    argv.help = argv.h
+  }
+  if (argv.r) {
+    argv.root = argv.r
+  }
+  if (argv.p) {
+    argv.port = argv.p
+  }
+  if (argv.n) {
+    argv.noOpen = argv.n
+  }
+  if (argv.version) {
+    return l(clrs.yellow(version))
+  }
+  if (argv.help) {
+    return l(clrs.cyan(help))
+  }
 
   if (argv._.length) {
-    servers = servers.filter((item) =>
-      item && argv._.indexOf(item.name) >= 0
-    )
+    servers = servers.filter((item) => item && argv._.indexOf(item.name) >= 0)
   }
 
   servers.forEach((server) => {
@@ -43,5 +54,8 @@ const main = () => {
   })
 }
 
-if (module.parent) nope()
-else main()
+if (module.parent) {
+  nope()
+} else {
+  main()
+}
