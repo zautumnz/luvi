@@ -46,7 +46,7 @@ const main = () => {
   }
 
   if (argv._.length) {
-    servers = servers.filter((item) => item && argv._.indexOf(item.name) >= 0)
+    servers = servers.filter((item) => item && argv._.includes(item.name))
   }
 
   servers.forEach((server) => {
