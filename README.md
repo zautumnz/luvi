@@ -2,11 +2,6 @@
 
 Dev server with simple config and API.
 
-## Deprecated: use serve or some other static file server
-I've loved working on this little server. It's been fun. But
-other projects do the same thing, and many do it better, so it's
-time to let go.
-
 [![Support with PayPal](https://img.shields.io/badge/paypal-donate-yellow.png)](https://paypal.me/zacanger) [![Patreon](https://img.shields.io/badge/patreon-donate-yellow.svg)](https://www.patreon.com/zacanger) [![ko-fi](https://img.shields.io/badge/donate-KoFi-yellow.svg)](https://ko-fi.com/U7U2110VB)
 
 ----
