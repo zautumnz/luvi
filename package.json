@@ -38,13 +38,13 @@
     "connect": "3.7.0",
     "minimist": "1.2.5",
     "serve-static": "1.14.1",
-    "zeelib": "11.1.4"
+    "zeelib": "11.1.5"
   },
   "devDependencies": {
-    "eslint": "7.8.1",
-    "eslint-plugin-zacanger": "2.1.1",
-    "prettier": "2.1.1",
-    "sortpack": "2.1.7"
+    "eslint": "7.13.0",
+    "eslint-plugin-zacanger": "2.1.3",
+    "prettier": "2.1.2",
+    "sortpack": "2.1.9"
   },
   "engines": {
     "node": ">=10.0.0"
