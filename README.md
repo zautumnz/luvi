@@ -20,6 +20,7 @@ Originally forked from [freddie](http://npm.im/freddie).
 
 ## Changes
 
+* 5.1.0: Add Markdown support
 * 5.0.0: Remove support for Node 8
 * 4.0.0: Switch to LGPL-3.0
 * 3.2.0: Un-deprecate, and add `.htm` and `.xhtml` support.
@@ -66,7 +67,7 @@ the file, unless any options are passed; if there are multiple servers in the
 `.luvi.json` file, every server's options will be overridden. Project root is
 `cwd` by default.
 
-```shell
+```
 ♡ luvi (a server)
 ------------------
 usage:
@@ -74,7 +75,8 @@ usage:
     ♡ luvi foo bar   # start servers 'foo' & 'bar'
     ♡ luvi -p 1337   # listen on specified port
     ♡ luvi -r /path  # serve from specified dir
-    ♡ luvi -n        # doesn't open the browser after start
+    ♡ luvi -n        # don't open the browser after start
+    ♡ luvi -m        # auto-render markdown files
     ♡ luvi -v        # luvi version
     ♡ luvi -h        # this help
                              --------------------
@@ -99,7 +101,8 @@ Use the `name` option to keep track of servers in logs.
   {
     "name": "testing",
     "root": "build",
-    "noOpen": true
+    "noOpen": true,
+    "markdown": true
   },
   {
     "name": "todo",
@@ -146,6 +149,10 @@ by calling `luvi()` again with different options.
 * name: `string` (default: `luvi`)
   * Server name. Useful for launching multiple servers, and for keeping track in logs.
   * Example: `name: 'foo'`
+* markdown: `bool` (default: `false`)
+  * Auto-render markdown files without extension.
+  * Example: `markdown: true`
+
 * onListen: `(name: string, port: number): void` (Default: `console.log ; open`)
   * Called when `luvi` starts listening.
   * Example: `onListen: (name, port) => { console.log(name, 'is listening on', port) }`

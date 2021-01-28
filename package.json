@@ -36,15 +36,16 @@
   ],
   "dependencies": {
     "connect": "3.7.0",
+    "connect-markdown": "0.0.3",
     "minimist": "1.2.5",
     "serve-static": "1.14.1",
-    "zeelib": "11.1.8"
+    "zeelib": "11.1.9"
   },
   "devDependencies": {
-    "eslint": "7.15.0",
-    "eslint-plugin-zacanger": "2.2.0",
+    "eslint": "7.20.0",
+    "eslint-plugin-zacanger": "2.3.0",
     "prettier": "2.2.1",
-    "sortpack": "2.1.11"
+    "sortpack": "2.2.0"
   },
   "engines": {
     "node": ">=10.0.0"

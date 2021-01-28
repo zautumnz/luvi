@@ -38,6 +38,9 @@ const main = () => {
   if (argv.n) {
     argv.noOpen = argv.n
   }
+  if (argv.m) {
+    argv.markdown = argv.m
+  }
   if (argv.version) {
     return l(clrs.yellow(version))
   }
