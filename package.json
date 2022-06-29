@@ -1,7 +1,7 @@
 {
   "name": "luvi",
   "description": "Dev server with simple config and API.",
-  "version": "5.1.1",
+  "version": "5.2.0",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
   "funding": {
     "type": "ko-fi",
