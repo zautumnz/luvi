@@ -12,7 +12,6 @@ const config = readJSON(configFile)
 const version = `♡ luvi ${pkg.version}`
 const clrs = require('zeelib/lib/colorize').default
 
-// eslint-disable-next-line fp/no-let
 let servers = Array.isArray(config) ? config : [config]
 
 const nope = () => {

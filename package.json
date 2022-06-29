@@ -7,7 +7,7 @@
     "type": "ko-fi",
     "url": "https://ko-fi.com/zacanger"
   },
-  "license": "LGPL-3.0",
+  "license": "MIT",
   "main": "lib/luvi.js",
   "preferGlobal": true,
   "bin": {
@@ -16,8 +16,7 @@
   "scripts": {
     "preversion": "sortpack && npm t",
     "start": "node ./index.js",
-    "test": "npm run test:lint",
-    "test:lint": "eslint -c .eslintrc.json *.js lib/"
+    "test": "standard"
   },
   "homepage": "https://github.com/zacanger/luvi#readme",
   "repository": {
@@ -38,18 +37,16 @@
   ],
   "dependencies": {
     "connect": "3.7.0",
-    "marked": "2.0.1",
-    "minimist": "1.2.5",
-    "serve-static": "1.14.1",
-    "zeelib": "11.1.9"
+    "marked": "4.0.17",
+    "minimist": "1.2.6",
+    "serve-static": "1.15.0",
+    "zeelib": "11.2.0"
   },
   "devDependencies": {
-    "eslint": "7.20.0",
-    "eslint-plugin-zacanger": "2.3.0",
-    "prettier": "2.2.1",
-    "sortpack": "2.2.0"
+    "sortpack": "2.2.4",
+    "standard": "17.0.0"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=16.0.0"
   }
 }

@@ -20,6 +20,7 @@ Originally forked from [freddie](http://npm.im/freddie).
 
 ## Changes
 
+* 5.2.0: Switch back to MIT license
 * 5.1.0: Add Markdown support
 * 5.0.0: Remove support for Node 8
 * 4.0.0: Switch to LGPL-3.0
