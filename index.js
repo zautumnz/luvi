@@ -4,13 +4,13 @@ const minimist = require('minimist')
 const luvi = require('./lib/luvi')
 const help = require('./lib/help')
 const readJSON = require('./lib/read-json')
+const clrs = require('./lib/colors')
 const pkg = readJSON(__dirname, 'package.json')
 const argv = minimist(process.argv.slice(2))
 const l = console.log
 const configFile = argv.config || `.${pkg.name}.json`
 const config = readJSON(configFile)
 const version = `♡ luvi ${pkg.version}`
-const clrs = require('zeelib/lib/colorize').default
 
 let servers = Array.isArray(config) ? config : [config]
 
