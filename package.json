@@ -3,10 +3,6 @@
   "description": "Dev server with simple config and API.",
   "version": "5.2.3",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
-  "funding": {
-    "type": "ko-fi",
-    "url": "https://ko-fi.com/zacanger"
-  },
   "license": "MIT",
   "main": "lib/luvi.js",
   "preferGlobal": true,
