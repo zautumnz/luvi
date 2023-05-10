@@ -2,6 +2,8 @@
 
 Dev server with simple config and API.
 
+[Donate](https://ko-fi.com/zacanger)
+
 ----
 
 ```shell
