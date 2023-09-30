@@ -56,8 +56,8 @@ const main = () => {
   })
 }
 
-if (module.parent) {
-  nope()
-} else {
+if (require.main === module) {
   main()
+} else {
+  nope()
 }
