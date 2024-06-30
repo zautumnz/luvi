@@ -1,6 +1,6 @@
 {
   "name": "luvi",
-  "description": "Dev server with simple config and API.",
+  "description": "Simple dev server with Markdown support, CLI, and API.",
   "version": "5.2.8",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
   "license": "MIT",
@@ -39,7 +39,7 @@
     "serve-static": "1.15.0"
   },
   "devDependencies": {
-    "sortpack": "2.3.4",
+    "sortpack": "2.4.0",
     "standard": "17.1.0"
   },
   "engines": {

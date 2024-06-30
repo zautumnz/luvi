@@ -1,6 +1,6 @@
 # luvi ♡
 
-Dev server with simple config and API.
+Simple dev server with Markdown support, CLI, and API.
 
 [Donate](https://ko-fi.com/zacanger)
 
@@ -9,17 +9,24 @@ Dev server with simple config and API.
 ```shell
 $ cd /path/to/your/project
 $ luvi
-luvi listening on 4444
+♡ luvi listening on 4444
 ```
 
 By default, `luvi` acts as a static server, serving the files in `cwd`.
-On launch, `luvi` will open a tab in your default browser pointing to your
-defined root (you can pass a `-n` flag to disable this).
-
-Originally forked from [freddie](http://npm.im/freddie).
 
 ## Changes
 
+* 6.0.0:
+  * Removed:
+    * Port finder (undocumented)
+    * Custom 404 page (has a default)
+    * Custom onListen
+    * JSON configs (use the JS API)
+  * Added:
+    * Using through the Node API now returns an http.server
+  * Changed:
+    * `open` defaults to false
+    * Markdown support is always on
 * 5.2.0: Switch back to MIT license
 * 5.1.0: Add Markdown support
 * 5.0.0: Remove support for Node 8
@@ -39,79 +46,26 @@ Originally forked from [freddie](http://npm.im/freddie).
 
 ```shell
 $ npm i -g luvi
-$ luvi [server, ...] [options]
+$ luvi [options]
 ```
-
-`luvi` looks inside `cwd` for a `.luvi.json` config file.
-If there is no config file, the default static server is launched.
 
 If you'd rather not install globally, you can use `npx`:
-`npx luvi [server, ...] [options]`.
-
-#### [server, ...]
-
-```shell
-$ luvi foo bar
-foo listening on port 4444
-bar listening on port 8888
-```
-
-List of named servers to launch. Only names matching the ones in config file
-will be launched.
+`npx luvi [options]`.
 
 ### [options]
-
-Command-line arguments take priority over config files and defaults.
-
-In a path with a `.luvi.json` file, running `luvi` will follow the options in
-the file, unless any options are passed; if there are multiple servers in the
-`.luvi.json` file, every server's options will be overridden. Project root is
-`cwd` by default.
 
 ```
 ♡ luvi (a server)
 ------------------
 usage:
-    ♡ luvi           # launch default server
-    ♡ luvi foo bar   # start servers 'foo' & 'bar'
+    ♡ luvi           # launch server with default config
     ♡ luvi -p 1337   # listen on specified port
     ♡ luvi -r /path  # serve from specified dir
-    ♡ luvi -n        # don't open the browser after start
-    ♡ luvi -m        # auto-render markdown files
+    ♡ luvi -o        # open the browser after start
     ♡ luvi -v        # luvi version
     ♡ luvi -h        # this help
-                             --------------------
-see the readme for config options and api usage
-```
-
-### .luvi.json
-
-To configure a single server: `{ "root": "public", "port": 9090 }`.
-The object will be passed directly to `luvi`.
-
-For multiple servers, simply use an array of single-server configs.
-Use the `name` option to keep track of servers in logs.
-
-```json
-[
-  {
-    "name": "drafts",
-    "root": "src",
-    "port": 1337
-  },
-  {
-    "name": "testing",
-    "root": "build",
-    "noOpen": true,
-    "markdown": true
-  },
-  {
-    "name": "todo",
-    "root": "doc",
-    "port": 6565,
-    "notFound": "/var/www/404.html"
-  }
-]
+--------------------
+see the readme for flags and api
 ```
 
 ## API
@@ -122,11 +76,13 @@ defaults are applied:
 ```javascript
 const luvi = require('luvi')
 
-luvi({
+const l = luvi({
   name: 'luvi',
   root: process.cwd(),
   port: 4444
 })
+
+// returns an http.server, so you can call l.close() when you're done with it
 ```
 
 This is exactly the same as just calling `luvi()`, with no config object.
@@ -145,24 +101,11 @@ by calling `luvi()` again with different options.
     Usually where you'd have `index.html`. Can be absolute or relative.
   * Example: `root: '/path/to/document/root'`
 * port: `number` (default: `4444`)
-  * Port on which to listen. If specified port is busy, `luvi` will look for a free port.
+  * Port on which to listen.
   * Example: `port: 3000`
-* name: `string` (default: `luvi`)
-  * Server name. Useful for launching multiple servers, and for keeping track in logs.
-  * Example: `name: 'foo'`
-* markdown: `bool` (default: `false`)
-  * Auto-render markdown files without extension.
-  * Example: `markdown: true`
-
-* onListen: `(name: string, port: number): void` (Default: `console.log ; open`)
-  * Called when `luvi` starts listening.
-  * Example: `onListen: (name, port) => { console.log(name, 'is listening on', port) }`
-* notFound: `string` (default: `undefined`)
-  * Path to a custom 404 page.
-  * Example: `notFound: '/path/to/404.html'`
-* noOpen: `bool` (default: `undefined`)
-  * Will not open the browser on server start.
-  * Example: `noOpen: true`
+* open: `bool` (default: `false`)
+  * Open the browser on server start.
+  * Example: `open: true`
 
 ## Contributing
 
