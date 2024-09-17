@@ -36,7 +36,7 @@
     "marked": "4.3.0",
     "minimist": "1.2.8",
     "open": "8.4.0",
-    "serve-static": "1.15.0"
+    "serve-static": "1.16.0"
   },
   "devDependencies": {
     "sortpack": "2.4.0",
