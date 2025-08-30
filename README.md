@@ -2,8 +2,6 @@
 
 Simple dev server with Markdown support, CLI, and API.
 
-[Donate](https://ko-fi.com/zacanger)
-
 ----
 
 ```shell
