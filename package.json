@@ -1,7 +1,7 @@
 {
   "name": "luvi",
   "description": "Simple dev server with Markdown support, CLI, and API.",
-  "version": "6.0.1",
+  "version": "7.0.0",
   "author": "Autumn Z",
   "license": "MIT",
   "main": "lib/luvi.js",
