@@ -1,5 +1,12 @@
 # luvi ♡
 
+## Deprecated
+
+This was one of the first modules I ever published, but I'm the only one who's
+ever used it, and these days I mostly use a little Go script instead.
+
+----
+
 Simple dev server with Markdown support, CLI, and API.
 
 ----
